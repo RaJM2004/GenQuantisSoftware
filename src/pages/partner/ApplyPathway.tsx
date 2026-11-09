@@ -150,10 +150,14 @@ export const ApplyPathway: React.FC = () => {
     privacyPolicyConsent: false
   });
 
-  // Switch pan india state if pathway changes
+  // Switch pan india state and reset step if pathway changes
   useEffect(() => {
+    setCurrentStep(1);
+    setSubmittedAppId(null);
     if (currentPathway === 'pan-india') {
       setTerritory(prev => ({ ...prev, isPanIndia: true, selectedStates: ['Pan-India (All 36 States & UTs)'] }));
+    } else {
+      setTerritory(prev => ({ ...prev, isPanIndia: false, selectedStates: prev.selectedStates.filter(s => !s.includes('Pan-India')) }));
     }
   }, [currentPathway]);
 
@@ -452,15 +456,6 @@ export const ApplyPathway: React.FC = () => {
               <span>/</span>
               <span className="text-slate-800 font-medium">Application Pathway</span>
             </div>
-
-            <button
-              type="button"
-              onClick={handleFillDemoData}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/80 hover:bg-blue-200 text-orange-700 text-xs font-semibold transition-colors"
-            >
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Fill Sample Profile (Instant Demo)</span>
-            </button>
           </div>
 
           {/* Banner */}

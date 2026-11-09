@@ -182,7 +182,7 @@ export const PartnerPortalHub: React.FC = () => {
             </div>
 
             {/* Quick Status Tracker Search Box (Light Theme) */}
-            <div className="mt-14 bg-white border border-orange-200/90 rounded-3xl p-6 sm:p-8 max-w-2xl shadow-xl shadow-orange-950/5">
+            <div id="track-docket" className="mt-14 bg-white border border-orange-200/90 rounded-3xl p-6 sm:p-8 max-w-2xl shadow-xl shadow-orange-950/5 scroll-mt-28">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                 <h3 className="text-sm font-bold uppercase tracking-wider text-orange-600 flex items-center gap-2">
                   <Search className="w-4 h-4" />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown, ShieldCheck, User, LogOut, Search, ArrowRight, Sparkles, Building2, Layers } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthStore, AuthUser } from '@/lib/authStore';
@@ -10,11 +10,23 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [pathwaysDropdown, setPathwaysDropdown] = useState(false);
   const [currentUser, setCurrentUser] = useState<AuthUser | null>(AuthStore.getCurrentUser());
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setPathwaysDropdown(false);
   }, [location.pathname]);
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setPathwaysDropdown(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,63 +91,121 @@ const Navbar: React.FC = () => {
 
             {/* Pathways Dropdown */}
             <div
+              ref={dropdownRef}
               className="relative"
               onMouseEnter={() => setPathwaysDropdown(true)}
               onMouseLeave={() => setPathwaysDropdown(false)}
             >
               <button
-                className="flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors hover:text-orange-600 hover:bg-orange-50/60"
-                onClick={() => setPathwaysDropdown(!pathwaysDropdown)}
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setPathwaysDropdown((prev) => !prev);
+                }}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors cursor-pointer ${
+                  pathwaysDropdown || location.pathname.startsWith('/apply')
+                    ? 'text-orange-600 font-semibold bg-orange-50'
+                    : 'text-slate-700 hover:text-orange-600 hover:bg-orange-50/60'
+                }`}
+                aria-expanded={pathwaysDropdown}
               >
                 <span>Application Forms</span>
-                <ChevronDown className="w-4 h-4 text-orange-400" />
+                <ChevronDown
+                  className={`w-4 h-4 text-orange-500 transition-transform duration-200 ${
+                    pathwaysDropdown ? 'rotate-180' : ''
+                  }`}
+                />
               </button>
 
               {pathwaysDropdown && (
-                <div className="absolute top-full left-0 w-80 bg-white rounded-2xl shadow-2xl border border-orange-100 p-2.5 mt-1 z-50 animate-in fade-in slide-in-from-top-1 duration-200">
-                  <div className="p-2 border-b border-orange-50 mb-1">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-orange-500 block">
-                      Select Pathway Form
-                    </span>
+                <div className="absolute top-full left-0 pt-2 z-50">
+                  <div className="w-80 bg-white rounded-2xl shadow-2xl border border-orange-200/90 p-3 animate-in fade-in slide-in-from-top-1 duration-150">
+                    <div className="p-2 border-b border-orange-100/70 mb-1.5 flex items-center justify-between">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-orange-600">
+                        Select Pathway Form
+                      </span>
+                      <Link
+                        to="/apply"
+                        onClick={() => setPathwaysDropdown(false)}
+                        className="text-[10px] font-semibold text-slate-500 hover:text-orange-600 transition-colors"
+                      >
+                        Compare All →
+                      </Link>
+                    </div>
+
+                    <div className="space-y-1">
+                      <Link
+                        to="/apply/pan-india"
+                        onClick={() => setPathwaysDropdown(false)}
+                        className={`flex flex-col p-2.5 rounded-xl transition-colors group ${
+                          location.pathname === '/apply/pan-india'
+                            ? 'bg-orange-50 text-orange-700 font-semibold'
+                            : 'hover:bg-orange-50/70'
+                        }`}
+                      >
+                        <span className="text-xs font-semibold text-slate-900 group-hover:text-orange-600 flex items-center justify-between">
+                          1. Pan-India Channel Partner
+                          <span className="text-[9px] px-2 py-0.5 rounded bg-orange-100 text-orange-700 font-mono font-semibold">
+                            ₹5-15 Cr
+                          </span>
+                        </span>
+                        <span className="text-[11px] text-slate-500 font-normal mt-0.5">
+                          National Master Distribution Network
+                        </span>
+                      </Link>
+
+                      <Link
+                        to="/apply/regional"
+                        onClick={() => setPathwaysDropdown(false)}
+                        className={`flex flex-col p-2.5 rounded-xl transition-colors group ${
+                          location.pathname === '/apply/regional'
+                            ? 'bg-orange-50 text-orange-700 font-semibold'
+                            : 'hover:bg-orange-50/70'
+                        }`}
+                      >
+                        <span className="text-xs font-semibold text-slate-900 group-hover:text-orange-600 flex items-center justify-between">
+                          2. Regional Channel Partner
+                          <span className="text-[9px] px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-mono font-semibold">
+                            ₹50L - ₹3Cr
+                          </span>
+                        </span>
+                        <span className="text-[11px] text-slate-500 font-normal mt-0.5">
+                          State & Zonal Healthcare Expansion
+                        </span>
+                      </Link>
+
+                      <Link
+                        to="/apply/franchise"
+                        onClick={() => setPathwaysDropdown(false)}
+                        className={`flex flex-col p-2.5 rounded-xl transition-colors group ${
+                          location.pathname === '/apply/franchise'
+                            ? 'bg-orange-50 text-orange-700 font-semibold'
+                            : 'hover:bg-orange-50/70'
+                        }`}
+                      >
+                        <span className="text-xs font-semibold text-slate-900 group-hover:text-orange-600 flex items-center justify-between">
+                          3. Franchise Smart Clinic
+                          <span className="text-[9px] px-2 py-0.5 rounded bg-orange-500 text-white font-mono font-semibold">
+                            ₹1.5 - ₹3Cr
+                          </span>
+                        </span>
+                        <span className="text-[11px] text-slate-500 font-normal mt-0.5">
+                          AI Diagnostic & Smart Health Center
+                        </span>
+                      </Link>
+                    </div>
+
+                    <div className="pt-2 mt-2 border-t border-orange-100">
+                      <Link
+                        to="/apply"
+                        onClick={() => setPathwaysDropdown(false)}
+                        className="w-full py-2 px-3 rounded-xl bg-orange-50/80 hover:bg-orange-100 text-orange-700 text-xs font-semibold flex items-center justify-between transition-colors"
+                      >
+                        <span>Open Pathways Form Wizard</span>
+                        <ArrowRight className="w-3.5 h-3.5 text-orange-500" />
+                      </Link>
+                    </div>
                   </div>
-                  <Link
-                    to="/apply/pan-india"
-                    className="flex flex-col p-2.5 rounded-xl hover:bg-orange-50/70 transition-colors group"
-                  >
-                    <span className="text-xs font-semibold text-slate-900 group-hover:text-orange-600 flex items-center justify-between">
-                      Pan-India Channel Partner
-                      <span className="text-[9px] px-2 py-0.5 rounded bg-orange-100 text-orange-700 font-mono font-semibold">₹5-15 Cr</span>
-                    </span>
-                    <span className="text-[11px] text-slate-500 font-normal mt-0.5">
-                      National Master Distribution Network
-                    </span>
-                  </Link>
-
-                  <Link
-                    to="/apply/regional"
-                    className="flex flex-col p-2.5 rounded-xl hover:bg-orange-50/70 transition-colors group"
-                  >
-                    <span className="text-xs font-semibold text-slate-900 group-hover:text-orange-600 flex items-center justify-between">
-                      Regional Channel Partner
-                      <span className="text-[9px] px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-mono font-semibold">₹50L - ₹3Cr</span>
-                    </span>
-                    <span className="text-[11px] text-slate-500 font-normal mt-0.5">
-                      State & Zonal Healthcare Expansion
-                    </span>
-                  </Link>
-
-                  <Link
-                    to="/apply/franchise"
-                    className="flex flex-col p-2.5 rounded-xl hover:bg-orange-50/70 transition-colors group"
-                  >
-                    <span className="text-xs font-semibold text-slate-900 group-hover:text-orange-600 flex items-center justify-between">
-                      Franchise Smart Clinic
-                      <span className="text-[9px] px-2 py-0.5 rounded bg-orange-500 text-white font-mono font-semibold">₹1.5 - ₹3Cr</span>
-                    </span>
-                    <span className="text-[11px] text-slate-500 font-normal mt-0.5">
-                      AI Diagnostic & Smart Health Center
-                    </span>
-                  </Link>
                 </div>
               )}
             </div>
@@ -150,11 +220,17 @@ const Navbar: React.FC = () => {
             </Link>
 
             <a
-              href="/#pathways"
+              href="/#track-docket"
               onClick={(e) => {
                 if (location.pathname !== '/' && location.pathname !== '/partner-portal') {
                   e.preventDefault();
-                  navigate('/#pathways');
+                  navigate('/#track-docket');
+                } else {
+                  const el = document.getElementById('track-docket');
+                  if (el) {
+                    e.preventDefault();
+                    el.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }
               }}
               className="px-3 py-2 rounded-lg transition-colors hover:text-orange-600 hover:bg-orange-50/60"
@@ -269,6 +345,22 @@ const Navbar: React.FC = () => {
             >
               3. GenQuantis™ Franchise Investor Form
             </Link>
+
+            <Link
+              to="/apply"
+              className="block px-3 py-2 rounded-xl text-xs font-semibold text-orange-600 hover:bg-orange-50"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Compare All Pathways
+            </Link>
+
+            <a
+              href="/#track-docket"
+              className="block px-3 py-2 rounded-xl text-xs font-medium text-slate-700 hover:bg-orange-50 hover:text-orange-600"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Track Docket Status
+            </a>
 
             <div className="pt-3 border-t border-orange-100 space-y-2">
               <Link

@@ -98,3 +98,4 @@ For testing and demonstrating the platform:
 | :--- | :--- | :--- | :--- |
 | **Partner / Applicant** | `GQ-2026-904128` | `vikram.sengupta@apollomediagroup.in` (or 1-Click Auto-Fill) | `/portal/partner-dashboard` |
 | **Scrutiny Board / Admin** | `admin@genquantis.com` | `Admin@GenQuantis2026` (or 1-Click Auto-Fill) | `/portal/admin` |
+

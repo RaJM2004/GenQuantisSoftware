@@ -106,16 +106,6 @@ export const PortalLogin: React.FC = () => {
     }, 400);
   };
 
-  const handleFillDemoApplicant = () => {
-    setAppId('GQ-2026-904128');
-    setMobileOrEmail('vikram.sengupta@apollomediagroup.in');
-  };
-
-  const handleFillDemoAdmin = () => {
-    setAdminEmail('admin@genquantis.com');
-    setAdminPassword('Admin@GenQuantis2026');
-  };
-
   return (
     <div className="min-h-screen flex flex-col bg-orange-50/20">
       <Navbar />
@@ -160,11 +150,11 @@ export const PortalLogin: React.FC = () => {
                 onClick={() => { setActiveTab('admin'); setAdminError(''); }}
                 className={`py-3.5 px-4 rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
                   activeTab === 'admin'
-                    ? 'bg-slate-900 text-orange-400 shadow-sm'
+                    ? 'bg-white text-orange-700 shadow-sm border border-orange-100'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
-                <ShieldCheck className="w-4 h-4 text-orange-400" />
+                <ShieldCheck className="w-4 h-4 text-orange-600" />
                 <span>Scrutiny Board / Admin</span>
               </button>
             </div>
@@ -172,23 +162,14 @@ export const PortalLogin: React.FC = () => {
             {/* TAB 1: APPLICANT LOGIN */}
             {activeTab === 'applicant' && (
               <div className="p-6 sm:p-10 space-y-6 animate-fade-in">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-                      <FileText className="w-5 h-5 text-orange-600" />
-                      <span>Access Your Individual Application Docket</span>
-                    </h2>
-                    <p className="text-xs text-slate-500 mt-1">
-                      Enter your unique Reference ID and verified mobile/email to access and handle your specific application.
-                    </p>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={handleFillDemoApplicant}
-                    className="text-[11px] px-2.5 py-1 rounded-lg bg-orange-50 text-orange-700 hover:bg-orange-100 font-semibold border border-orange-200 transition-colors whitespace-nowrap"
-                  >
-                    Auto-Fill Demo
-                  </button>
+                <div>
+                  <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <FileText className="w-5 h-5 text-orange-600" />
+                    <span>Access Your Individual Application Docket</span>
+                  </h2>
+                  <p className="text-xs text-slate-500 mt-1">
+                    Enter your unique Reference ID and verified mobile/email to access and handle your specific application.
+                  </p>
                 </div>
 
                 {applicantError && (
@@ -266,42 +247,33 @@ export const PortalLogin: React.FC = () => {
               </div>
             )}
 
-            {/* TAB 2: ADMIN LOGIN */}
+            {/* TAB 2: ADMIN LOGIN (LIGHT THEME) */}
             {activeTab === 'admin' && (
-              <div className="p-6 sm:p-10 space-y-6 animate-fade-in bg-slate-950 text-white">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/20 text-orange-300 text-[11px] font-bold uppercase tracking-wider mb-2 border border-orange-400/30">
-                      <ShieldCheck className="w-3.5 h-3.5 text-orange-400" />
-                      <span>Authorized Personnel Only</span>
-                    </div>
-                    <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                      <Lock className="w-5 h-5 text-orange-400" />
-                      <span>GenQuantis™ Scrutiny Board Console</span>
-                    </h2>
-                    <p className="text-xs text-slate-300 mt-1 font-light">
-                      Administrative access to scrutinize, verify documents, conduct diligence, and manage ALL nationwide applicants.
-                    </p>
+              <div className="p-6 sm:p-10 space-y-6 animate-fade-in bg-white text-slate-900">
+                <div>
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-100 border border-orange-200 text-orange-800 text-[11px] font-bold uppercase tracking-wider mb-2">
+                    <ShieldCheck className="w-3.5 h-3.5 text-orange-600" />
+                    <span>Authorized Personnel Only</span>
                   </div>
-                  <button
-                    type="button"
-                    onClick={handleFillDemoAdmin}
-                    className="text-[11px] px-2.5 py-1 rounded-lg bg-orange-500/20 text-orange-300 hover:bg-orange-500/30 font-semibold border border-orange-400/30 transition-colors whitespace-nowrap"
-                  >
-                    Auto-Fill Admin
-                  </button>
+                  <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <Lock className="w-5 h-5 text-orange-600" />
+                    <span>GenQuantis™ Scrutiny Board Console</span>
+                  </h2>
+                  <p className="text-xs text-slate-500 mt-1 font-normal">
+                    Administrative access to scrutinize, verify documents, conduct diligence, and manage ALL nationwide applicants.
+                  </p>
                 </div>
 
                 {adminError && (
-                  <div className="p-4 rounded-2xl bg-rose-500/20 border border-rose-500/30 text-rose-200 text-xs flex items-start gap-3">
-                    <AlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-rose-400" />
+                  <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs flex items-start gap-3">
+                    <AlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-rose-600" />
                     <p className="font-semibold">{adminError}</p>
                   </div>
                 )}
 
                 <form onSubmit={handleAdminLogin} className="space-y-4">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
                       Executive Email Address *
                     </label>
                     <div className="relative">
@@ -312,13 +284,13 @@ export const PortalLogin: React.FC = () => {
                         value={adminEmail}
                         onChange={(e) => setAdminEmail(e.target.value)}
                         placeholder="e.g. admin@genquantis.com or dharani@genquantis.com"
-                        className="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-xs sm:text-sm text-white focus:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
+                        className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
                       Executive Security Passcode *
                     </label>
                     <div className="relative">
@@ -329,7 +301,7 @@ export const PortalLogin: React.FC = () => {
                         value={adminPassword}
                         onChange={(e) => setAdminPassword(e.target.value)}
                         placeholder="••••••••••••"
-                        className="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-xs sm:text-sm text-white focus:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all font-mono"
+                        className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all font-mono"
                       />
                     </div>
                   </div>
@@ -337,7 +309,7 @@ export const PortalLogin: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isAdminSubmitting}
-                    className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 hover:from-orange-400 hover:to-amber-500 text-slate-950 font-bold text-sm shadow-xl shadow-orange-500/25 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                    className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-sm shadow-xl shadow-orange-500/25 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                   >
                     {isAdminSubmitting ? (
                       <span>Granting Executive Access...</span>
