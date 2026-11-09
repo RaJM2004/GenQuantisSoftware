@@ -3,17 +3,17 @@ import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { PartnerStore } from '@/lib/partnerStore';
-import { 
-  Building2, 
-  MapPin, 
-  ShieldCheck, 
-  Search, 
-  ArrowRight, 
-  Sparkles, 
-  CheckCircle2, 
-  Globe2, 
-  Activity, 
-  TrendingUp, 
+import {
+  Building2,
+  MapPin,
+  ShieldCheck,
+  Search,
+  ArrowRight,
+  Sparkles,
+  CheckCircle2,
+  Globe2,
+  Activity,
+  TrendingUp,
   AlertTriangle,
   Award,
   Users,
@@ -135,23 +135,23 @@ export const PartnerPortalHub: React.FC = () => {
     <div className="min-h-screen bg-orange-50/20 flex flex-col">
       <Navbar />
 
-      <main className="flex-grow pt-24 pb-20">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-zinc-950 to-slate-900 text-white py-16 sm:py-24">
-          <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#f97316_1px,transparent_1px)] [background-size:22px_22px]" />
-          
+      <main className="flex-grow pt-20">
+        {/* Clean Light & Radiant Orange Hero Section */}
+        <section className="relative overflow-hidden bg-gradient-to-b from-orange-50/80 via-amber-50/30 to-white text-slate-900 py-16 sm:py-24 border-b border-orange-100">
+          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#f97316_1px,transparent_1px)] [background-size:24px_24px]" />
+
           <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-400/30 text-orange-400 text-xs font-semibold uppercase tracking-wider mb-6">
-                <Sparkles className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100 border border-orange-200 text-orange-800 text-xs font-bold uppercase tracking-wider mb-6">
+                <Sparkles className="w-3.5 h-3.5 text-orange-600" />
                 <span>Next-Gen Healthcare Partnership Ecosystem</span>
               </div>
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-950 mb-6 leading-tight">
                 AI + Diagnostics + National Network
               </h1>
-              <p className="text-slate-300 text-base sm:text-lg font-light leading-relaxed mb-8">
-                Welcome to the official <strong>GenQuantis™ Partner & Franchise Investor Portal</strong>. 
-                Our field work is actively underway nationwide. We are onboarding visionary Channel Partners 
+              <p className="text-slate-600 text-base sm:text-lg font-normal leading-relaxed mb-8">
+                Welcome to the official <strong>GenQuantis™ Partner & Franchise Investor Portal</strong>.
+                Our field work is actively underway nationwide. We are onboarding visionary Channel Partners
                 and Franchise Investors to scale India's most advanced AI-enabled preventive diagnostics network.
               </p>
 
@@ -159,45 +159,45 @@ export const PartnerPortalHub: React.FC = () => {
               <div className="flex flex-wrap items-center gap-4">
                 <a
                   href="#pathways"
-                  className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 hover:from-orange-300 hover:to-amber-400 text-slate-950 font-bold text-sm shadow-xl shadow-orange-500/25 transition-all flex items-center gap-2"
+                  className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-sm shadow-xl shadow-orange-500/25 transition-all flex items-center gap-2 transform hover:-translate-y-0.5"
                 >
                   <span>Select Application Pathway</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <Link
                   to="/portal/login"
-                  className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-colors flex items-center gap-2"
+                  className="px-6 py-3.5 rounded-xl bg-white hover:bg-orange-50 text-slate-800 font-semibold text-sm border border-orange-200 shadow-sm transition-colors flex items-center gap-2"
                 >
-                  <Users className="w-4 h-4 text-orange-400" />
+                  <Users className="w-4 h-4 text-orange-600" />
                   <span>Partner Portal Login</span>
                 </Link>
                 <Link
                   to="/portal/login?tab=admin"
-                  className="px-5 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white font-medium text-xs border border-slate-700 transition-colors flex items-center gap-2"
+                  className="px-5 py-3.5 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-800 font-medium text-xs border border-orange-200 shadow-sm transition-colors flex items-center gap-2"
                 >
-                  <ShieldCheck className="w-4 h-4 text-orange-400" />
+                  <ShieldCheck className="w-4 h-4 text-orange-600" />
                   <span>GenQuantis™ Scrutiny Board</span>
                 </Link>
               </div>
             </div>
 
-            {/* Quick Status Tracker Search Box */}
-            <div className="mt-14 bg-white/10 backdrop-blur-md border border-white/15 rounded-3xl p-6 sm:p-8 max-w-2xl shadow-2xl">
+            {/* Quick Status Tracker Search Box (Light Theme) */}
+            <div className="mt-14 bg-white border border-orange-200/90 rounded-3xl p-6 sm:p-8 max-w-2xl shadow-xl shadow-orange-950/5">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-orange-400 flex items-center gap-2">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-orange-600 flex items-center gap-2">
                   <Search className="w-4 h-4" />
                   <span>Track Application Due Diligence Status</span>
                 </h3>
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 text-[10px] font-mono">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <Database className="w-3 h-3" />
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-800 text-[10px] font-mono">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <Database className="w-3 h-3 text-emerald-600" />
                   <span>MongoDB Atlas</span>
                 </div>
               </div>
-              <p className="text-xs text-slate-300 font-light mb-4">
+              <p className="text-xs text-slate-600 font-normal mb-4">
                 Already filed an application? Enter your unique Reference Number (e.g. <code>GQ-2026-904128</code>) for real-time screening updates from MongoDB storage.
               </p>
-              
+
               <form onSubmit={handleTrackSubmit} className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="text"
@@ -208,12 +208,12 @@ export const PartnerPortalHub: React.FC = () => {
                   }}
                   placeholder="Enter GQ-2026-XXXXXX"
                   disabled={isSearching}
-                  className="flex-grow px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 font-mono disabled:opacity-50"
+                  className="flex-grow px-4 py-3 rounded-xl bg-slate-50 border border-orange-200 text-slate-900 placeholder-slate-400 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 font-mono disabled:opacity-50"
                 />
                 <button
                   type="submit"
                   disabled={isSearching}
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold text-sm transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-60"
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold text-sm transition-all shadow-md shadow-orange-500/20 flex items-center justify-center gap-2 disabled:opacity-60"
                 >
                   {isSearching ? (
                     <>
@@ -230,7 +230,7 @@ export const PartnerPortalHub: React.FC = () => {
               </form>
 
               {trackError && (
-                <p className="text-xs text-rose-400 mt-3 bg-rose-500/10 p-3 rounded-xl border border-rose-500/20">
+                <p className="text-xs text-rose-700 mt-3 bg-rose-50 p-3 rounded-xl border border-rose-200">
                   {trackError}
                 </p>
               )}
@@ -241,13 +241,13 @@ export const PartnerPortalHub: React.FC = () => {
         {/* 3 Application Pathways Section */}
         <section id="pathways" className="py-20 container mx-auto px-4 sm:px-6 max-w-6xl">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-orange-600 bg-orange-100/60 px-4 py-1.5 rounded-full border border-orange-200">
+            <span className="text-xs font-bold uppercase tracking-widest text-orange-700 bg-orange-100 px-4 py-1.5 rounded-full border border-orange-200">
               Structured Due Diligence Gateways
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-3">
               Three Distinct Application Pathways
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base font-light">
+            <p className="text-slate-600 text-sm sm:text-base font-normal">
               Each category maintains its own eligibility requirements, screening pipeline, legal authority boundaries, and appointment covenants.
             </p>
           </div>
@@ -256,7 +256,7 @@ export const PartnerPortalHub: React.FC = () => {
             {pathways.map((p) => (
               <div
                 key={p.id}
-                className="bg-white rounded-3xl border border-orange-100 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1"
+                className="bg-white rounded-3xl border border-orange-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1"
               >
                 {/* Card Top Banner */}
                 <div className={`p-6 sm:p-7 bg-gradient-to-r ${p.accentGradient} text-white`}>
@@ -266,7 +266,7 @@ export const PartnerPortalHub: React.FC = () => {
                   <h3 className="text-xl font-bold mt-4 mb-2 text-white">
                     {p.title}
                   </h3>
-                  <p className="text-xs text-white/80 font-light leading-relaxed">
+                  <p className="text-xs text-white/90 font-light leading-relaxed">
                     {p.description}
                   </p>
                 </div>
@@ -288,7 +288,7 @@ export const PartnerPortalHub: React.FC = () => {
                     </ul>
                   </div>
 
-                  <div className="p-3.5 bg-orange-50/40 rounded-2xl border border-orange-100 text-[11px] text-slate-600 space-y-1">
+                  <div className="p-3.5 bg-orange-50/50 rounded-2xl border border-orange-100 text-[11px] text-slate-600 space-y-1">
                     <span className="font-semibold text-slate-800 uppercase tracking-wider text-[10px] block">
                       Authority Boundary:
                     </span>
@@ -300,7 +300,7 @@ export const PartnerPortalHub: React.FC = () => {
                 <div className="p-6 pt-0">
                   <Link
                     to={`/apply/${p.id}`}
-                    className="w-full py-3.5 px-4 rounded-xl bg-slate-900 hover:bg-gradient-to-r hover:from-orange-500 hover:to-amber-500 text-white font-semibold text-xs transition-all flex items-center justify-center gap-2 shadow-md"
+                    className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 hover:from-orange-600 hover:to-amber-600 text-white font-semibold text-xs transition-all flex items-center justify-center gap-2 shadow-md shadow-orange-500/20"
                   >
                     <span>{p.cta}</span>
                     <ArrowRight className="w-4 h-4" />
@@ -311,27 +311,30 @@ export const PartnerPortalHub: React.FC = () => {
           </div>
         </section>
 
-        {/* Governance & Authority Matrix Section */}
+        {/* Governance & Authority Matrix Section (Light Theme) */}
         <section className="py-16 bg-white border-y border-orange-100">
           <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-            <div className="bg-gradient-to-br from-slate-950 via-stone-900 to-amber-950 rounded-3xl p-8 sm:p-12 text-white shadow-xl">
+            <div className="bg-gradient-to-br from-orange-50 via-amber-50/40 to-orange-100/30 rounded-3xl p-8 sm:p-12 border border-orange-200 shadow-md text-slate-900">
               <div className="max-w-3xl mb-8">
-                <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider mb-2">
-                  <AlertTriangle className="w-4 h-4" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 border border-orange-200 text-orange-800 text-xs font-bold uppercase tracking-wider mb-3">
+                  <AlertTriangle className="w-4 h-4 text-orange-600" />
                   <span>Enforced Software Governance</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 mb-2">
                   Clear GenQuantis™ Authority Matrix
                 </h3>
-                <p className="text-slate-300 text-xs sm:text-sm font-light leading-relaxed">
+                <p className="text-slate-600 text-xs sm:text-sm font-normal leading-relaxed">
                   The GenQuantis™ portal strictly enforces company governance. Nothing is contractually committed without executive GenQuantis™ approval.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-slate-300 font-light">
-                <div className="p-5 bg-white/5 rounded-2xl border border-white/10 space-y-2">
-                  <h4 className="text-sm font-bold text-orange-400">Channel Partners May:</h4>
-                  <ul className="space-y-1.5 text-slate-300 list-disc pl-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs font-normal">
+                <div className="p-5 bg-white rounded-2xl border border-orange-200 shadow-sm space-y-2.5">
+                  <h4 className="text-sm font-bold text-orange-700 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                    <span>Channel Partners May:</span>
+                  </h4>
+                  <ul className="space-y-1.5 text-slate-700 list-disc pl-4">
                     <li>Identify prospective Franchise Investors and diagnostic site locations.</li>
                     <li>Develop local healthcare awareness and clinical practitioner relationships.</li>
                     <li>Introduce and forward prospective investors into the GenQuantis™ portal.</li>
@@ -339,9 +342,12 @@ export const PartnerPortalHub: React.FC = () => {
                   </ul>
                 </div>
 
-                <div className="p-5 bg-rose-950/30 rounded-2xl border border-rose-500/20 space-y-2">
-                  <h4 className="text-sm font-bold text-rose-300">Channel Partners CANNOT:</h4>
-                  <ul className="space-y-1.5 text-rose-200/90 list-disc pl-4">
+                <div className="p-5 bg-rose-50/70 rounded-2xl border border-rose-200 shadow-sm space-y-2.5">
+                  <h4 className="text-sm font-bold text-rose-800 flex items-center gap-1.5">
+                    <AlertTriangle className="w-4 h-4 text-rose-600" />
+                    <span>Channel Partners CANNOT:</span>
+                  </h4>
+                  <ul className="space-y-1.5 text-rose-900/90 list-disc pl-4">
                     <li>Appoint or approve any Franchise Investor.</li>
                     <li>Sign a Franchise or Distributor Agreement on behalf of GenQuantis™.</li>
                     <li>Promise ROI, guarantee revenues, or project minimum business volume.</li>
@@ -355,8 +361,8 @@ export const PartnerPortalHub: React.FC = () => {
 
         {/* ₹2.5 Lakh Onboarding Fee Disclosure Section */}
         <section className="py-16 container mx-auto px-4 sm:px-6 max-w-6xl">
-          <div className="bg-orange-50/50 rounded-3xl p-8 sm:p-10 border border-orange-100">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-orange-200/60">
+          <div className="bg-white rounded-3xl p-8 sm:p-10 border border-orange-200 shadow-md">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-orange-100">
               <div>
                 <div className="flex items-center gap-2 text-orange-600 text-xs font-bold uppercase tracking-wider mb-1">
                   <CreditCard className="w-4 h-4" />
@@ -370,21 +376,21 @@ export const PartnerPortalHub: React.FC = () => {
                 </p>
               </div>
               <div className="text-left md:text-right">
-                <span className="text-3xl font-extrabold text-blue-950">₹2,95,000</span>
+                <span className="text-3xl font-extrabold text-orange-600">₹2,95,000</span>
                 <span className="text-xs text-slate-500 block">Total Inclusive of GST</span>
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6">
-              <div className="p-4 bg-white rounded-2xl border border-slate-200">
-                <FileCheck2 className="w-5 h-5 text-blue-600 mb-2" />
+              <div className="p-4 bg-orange-50/40 rounded-2xl border border-orange-100">
+                <FileCheck2 className="w-5 h-5 text-orange-600 mb-2" />
                 <h4 className="font-semibold text-xs text-slate-900 mb-1">What the Package Covers</h4>
                 <p className="text-[11px] text-slate-600 leading-relaxed">
                   Comprehensive executive orientation, AI clinical diagnostic training manuals, partner development collateral, regulatory compliance kit, and portal access.
                 </p>
               </div>
 
-              <div className="p-4 bg-white rounded-2xl border border-slate-200">
+              <div className="p-4 bg-orange-50/40 rounded-2xl border border-orange-100">
                 <ShieldCheck className="w-5 h-5 text-emerald-600 mb-2" />
                 <h4 className="font-semibold text-xs text-slate-900 mb-1">Approval Prerequisite</h4>
                 <p className="text-[11px] text-slate-600 leading-relaxed">
@@ -392,34 +398,34 @@ export const PartnerPortalHub: React.FC = () => {
                 </p>
               </div>
 
-              <div className="p-4 bg-white rounded-2xl border border-slate-200">
-                <AlertTriangle className="w-5 h-5 text-amber-600 mb-2" />
-                <h4 className="font-semibold text-xs text-slate-900 mb-1">Zero Commercial Guarantee</h4>
+              <div className="p-4 bg-orange-50/40 rounded-2xl border border-orange-100">
+                <Award className="w-5 h-5 text-amber-600 mb-2" />
+                <h4 className="font-semibold text-xs text-slate-900 mb-1">Direct RTGS / NEFT to GenQuantis</h4>
                 <p className="text-[11px] text-slate-600 leading-relaxed">
-                  The onboarding fee does not imply or guarantee any ROI, revenue volumes, or minimum turnover. Payments are processed via PCI-DSS compliant payment gateways.
+                  Payment is made strictly to the official corporate bank account of GenQuantis. Cash payments or unauthorized intermediary transfers are strictly prohibited.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Field Representative Mobile-First Banner (#19 in directive) */}
+        {/* Field Representative Mobile-First Banner (Orange Gradient) */}
         <section className="py-8 container mx-auto px-4 sm:px-6 max-w-6xl">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-6 sm:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+          <div className="bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 rounded-3xl p-6 sm:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl shadow-orange-500/20">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0">
                 <Smartphone className="w-6 h-6 text-white" />
               </div>
               <div>
                 <h4 className="text-lg font-bold">On-Ground Field Representative Quick Assist</h4>
-                <p className="text-xs text-blue-100 font-light max-w-xl">
+                <p className="text-xs text-white/90 font-light max-w-xl">
                   Field teams can open this portal directly on iPhone, Android, or Tablet devices to onboard prospective partners and investors immediately on the spot.
                 </p>
               </div>
             </div>
             <Link
               to="/apply/regional"
-              className="px-6 py-3 rounded-xl bg-white text-blue-900 hover:bg-blue-50 font-bold text-xs whitespace-nowrap shadow-md transition-colors"
+              className="px-6 py-3 rounded-xl bg-white text-orange-700 hover:bg-orange-50 font-bold text-xs whitespace-nowrap shadow-md transition-colors"
             >
               Launch Field Application Mode
             </Link>
