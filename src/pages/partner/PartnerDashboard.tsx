@@ -435,7 +435,7 @@ export const PartnerDashboard: React.FC = () => {
           <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-indigo-950 rounded-3xl p-6 sm:p-8 text-white shadow-xl mb-8">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div>
-                <div className="flex items-center gap-2 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-2">
+                <div className="flex items-center gap-2 text-orange-400 text-xs font-semibold uppercase tracking-wider mb-2">
                   <ShieldCheck className="w-4 h-4" />
                   <span>Authorized Partner & Applicant Portal</span>
                 </div>
@@ -443,7 +443,7 @@ export const PartnerDashboard: React.FC = () => {
                   <h1 className="text-2xl sm:text-3xl font-extrabold text-white">
                     {selectedApp.business.legalEntityName || selectedApp.individual.fullName}
                   </h1>
-                  <span className="font-mono text-xs px-3 py-1 rounded-full bg-blue-500/20 text-cyan-300 border border-blue-400/30">
+                  <span className="font-mono text-xs px-3 py-1 rounded-full bg-orange-500/20 text-orange-300 border border-orange-400/30">
                     Ref: {selectedApp.id}
                   </span>
                 </div>
@@ -457,13 +457,13 @@ export const PartnerDashboard: React.FC = () => {
                 /* Executive Scrutiny Controls */
                 <div className="bg-slate-900/90 p-3.5 rounded-2xl border border-cyan-500/30 flex flex-col gap-2 min-w-[280px]">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-[10px] uppercase font-bold text-cyan-400 tracking-wider flex items-center gap-1.5">
-                      <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
+                    <span className="text-[10px] uppercase font-bold text-orange-400 tracking-wider flex items-center gap-1.5">
+                      <ShieldCheck className="w-3.5 h-3.5 text-orange-400" />
                       Executive Scrutiny Mode
                     </span>
                     <Link
                       to="/portal/admin"
-                      className="text-[10px] text-cyan-300 hover:text-white underline font-semibold flex items-center gap-1"
+                      className="text-[10px] text-orange-300 hover:text-white underline font-semibold flex items-center gap-1"
                     >
                       <ArrowLeft className="w-3 h-3" />
                       Board Console
@@ -479,7 +479,7 @@ export const PartnerDashboard: React.FC = () => {
                         const match = applications.find(a => a.id === e.target.value);
                         if (match) setSelectedApp(match);
                       }}
-                      className="bg-slate-950 text-white text-xs px-3 py-1.5 rounded-xl border border-slate-700 focus:border-cyan-400 focus:outline-none"
+                      className="bg-slate-950 text-white text-xs px-3 py-1.5 rounded-xl border border-slate-700 focus:border-orange-400 focus:outline-none"
                     >
                       {applications.map(app => (
                         <option key={app.id} value={app.id}>
@@ -500,7 +500,7 @@ export const PartnerDashboard: React.FC = () => {
                       </span>
                     </div>
                     <p className="text-xs text-slate-200 mt-0.5 font-medium">
-                      Docket ID: <span className="font-mono text-cyan-300 font-bold">{selectedApp.id}</span>
+                      Docket ID: <span className="font-mono text-orange-300 font-bold">{selectedApp.id}</span>
                     </p>
                   </div>
 
@@ -544,7 +544,7 @@ export const PartnerDashboard: React.FC = () => {
                     onClick={() => setActiveTab(tab.id as any)}
                     className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold transition-all ${
                       isActive
-                        ? 'bg-white text-blue-950 shadow-md'
+                        ? 'bg-white text-orange-950 shadow-md'
                         : 'bg-white/10 hover:bg-white/20 text-white'
                     }`}
                   >
@@ -562,7 +562,7 @@ export const PartnerDashboard: React.FC = () => {
               {/* Status Header Alert */}
               <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-full">
                     Current Milestone Status
                   </span>
                   <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mt-2 capitalize">
@@ -580,8 +580,8 @@ export const PartnerDashboard: React.FC = () => {
                       <span>Formally Appointed & Activated</span>
                     </span>
                   ) : (
-                    <span className="px-4 py-2 rounded-xl bg-blue-100 text-blue-800 text-xs font-semibold flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-blue-600" />
+                    <span className="px-4 py-2 rounded-xl bg-orange-100 text-orange-800 text-xs font-semibold flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-orange-600" />
                       <span>In Active GenQuantis™ Scrutiny</span>
                     </span>
                   )}
@@ -591,7 +591,7 @@ export const PartnerDashboard: React.FC = () => {
               {/* Status Timeline Workflow */}
               <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
                 <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-6 flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-blue-600" />
+                  <Clock className="w-4 h-4 text-orange-600" />
                   <span>Strict Due Diligence Milestones</span>
                 </h4>
 
@@ -601,7 +601,7 @@ export const PartnerDashboard: React.FC = () => {
                       {index < selectedApp.statusTimeline.length - 1 && (
                         <div className="absolute left-4 top-8 bottom-0 w-0.5 bg-blue-200" />
                       )}
-                      <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center flex-shrink-0 z-10 shadow-sm">
+                      <div className="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center flex-shrink-0 z-10 shadow-sm">
                         <CheckCircle2 className="w-4 h-4" />
                       </div>
                       <div className="bg-slate-50 rounded-2xl p-4 border border-slate-200 flex-grow">
@@ -627,7 +627,7 @@ export const PartnerDashboard: React.FC = () => {
               {/* Territory & Scope Details */}
               <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
                 <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-4 flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-blue-600" />
+                  <MapPin className="w-4 h-4 text-orange-600" />
                   <span>Operational Territory Scope</span>
                 </h4>
                 <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200">
@@ -638,7 +638,7 @@ export const PartnerDashboard: React.FC = () => {
                   ) : (
                     <div className="flex flex-wrap gap-2">
                       {selectedApp.territory.selectedStates.map(st => (
-                        <span key={st} className="px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold">
+                        <span key={st} className="px-3 py-1 rounded-full bg-orange-100 text-orange-800 text-xs font-semibold">
                           {st}
                         </span>
                       ))}
@@ -707,7 +707,7 @@ export const PartnerDashboard: React.FC = () => {
                                 ? 'bg-rose-100 text-rose-700' 
                                 : isVerified 
                                 ? 'bg-emerald-100 text-emerald-700' 
-                                : 'bg-blue-100 text-blue-700'
+                                : 'bg-orange-100 text-orange-700'
                             }`}>
                               <FileText className="w-5 h-5" />
                             </div>
@@ -762,9 +762,9 @@ export const PartnerDashboard: React.FC = () => {
                               title="Inspect uploaded document in high-res viewer"
                             >
                               {loadingDocId === doc.id ? (
-                                <Loader2 className="w-3.5 h-3.5 animate-spin text-blue-600" />
+                                <Loader2 className="w-3.5 h-3.5 animate-spin text-orange-600" />
                               ) : (
-                                <Eye className="w-3.5 h-3.5 text-blue-600" />
+                                <Eye className="w-3.5 h-3.5 text-orange-600" />
                               )}
                               <span>View Document</span>
                             </button>
@@ -788,7 +788,7 @@ export const PartnerDashboard: React.FC = () => {
                             isRejected
                               ? 'bg-rose-600 hover:bg-rose-700 text-white shadow-rose-500/20'
                               : isPending
-                              ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-blue-500/20'
+                              ? 'bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-white shadow-orange-500/20'
                               : 'bg-white hover:bg-slate-100 text-slate-700 border border-slate-200'
                           }`}>
                             {isReuploading ? (
@@ -839,7 +839,7 @@ export const PartnerDashboard: React.FC = () => {
                       key={msg.id}
                       className={`p-4 rounded-2xl max-w-xl text-xs ${
                         msg.sender === 'management'
-                          ? 'bg-blue-50 border border-blue-200 text-blue-950 mr-auto'
+                          ? 'bg-orange-50 border border-orange-200 text-orange-950 mr-auto'
                           : 'bg-indigo-900 text-white ml-auto'
                       }`}
                     >
@@ -860,11 +860,11 @@ export const PartnerDashboard: React.FC = () => {
                   value={replyMessage}
                   onChange={(e) => setReplyMessage(e.target.value)}
                   placeholder="Type official response or document clarification..."
-                  className="flex-grow px-4 py-2.5 rounded-xl border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="flex-grow px-4 py-2.5 rounded-xl border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
                 <button
                   type="submit"
-                  className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs transition-colors flex items-center gap-1.5 shadow-sm"
+                  className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-white font-semibold text-xs transition-colors flex items-center gap-1.5 shadow-sm"
                 >
                   <Send className="w-3.5 h-3.5" />
                   <span>Send</span>
@@ -887,13 +887,13 @@ export const PartnerDashboard: React.FC = () => {
                     selectedApp.paymentStatus === 'completed'
                       ? 'bg-emerald-100 text-emerald-800'
                       : selectedApp.paymentStatus === 'submitted'
-                        ? 'bg-blue-100 text-blue-800'
+                        ? 'bg-orange-100 text-orange-800'
                         : selectedApp.paymentStatus === 'rejected'
                           ? 'bg-rose-100 text-rose-800'
                           : 'bg-amber-100 text-amber-800'
                   }`}>
                     {selectedApp.paymentStatus === 'completed' && <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />}
-                    {selectedApp.paymentStatus === 'submitted' && <Clock className="w-3.5 h-3.5 text-blue-600" />}
+                    {selectedApp.paymentStatus === 'submitted' && <Clock className="w-3.5 h-3.5 text-orange-600" />}
                     {selectedApp.paymentStatus === 'rejected' && <AlertTriangle className="w-3.5 h-3.5 text-rose-600" />}
                     {selectedApp.paymentStatus === 'completed' 
                       ? 'Settled & Verified' 
@@ -941,9 +941,9 @@ export const PartnerDashboard: React.FC = () => {
                   <span>Applicable Goods and Services Tax (GST @ 18%)</span>
                   <span className="font-semibold text-slate-900">₹45,000.00</span>
                 </div>
-                <div className="flex justify-between text-sm font-extrabold text-blue-950 pt-2 border-t border-slate-200">
+                <div className="flex justify-between text-sm font-extrabold text-orange-950 pt-2 border-t border-slate-200">
                   <span>Total Amount Payable</span>
-                  <span className="text-lg text-blue-600">₹2,95,000.00</span>
+                  <span className="text-lg text-orange-600">₹2,95,000.00</span>
                 </div>
               </div>
 
@@ -986,9 +986,9 @@ export const PartnerDashboard: React.FC = () => {
               ) : selectedApp.paymentStatus === 'submitted' && !isEditingPayment ? (
                 /* CASE 2: PAYMENT SUBMITTED — AWAITING MANUAL RECONCILIATION */
                 <div className="space-y-6">
-                  <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50/50 rounded-2xl border border-blue-200 space-y-4">
-                    <div className="flex items-center gap-2 text-blue-950 font-bold text-sm">
-                      <Clock className="w-5 h-5 text-blue-600" />
+                  <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50/50 rounded-2xl border border-orange-200 space-y-4">
+                    <div className="flex items-center gap-2 text-orange-950 font-bold text-sm">
+                      <Clock className="w-5 h-5 text-orange-600" />
                       <span>Bank Transfer Submitted — Manual Verification in Progress</span>
                     </div>
 
@@ -996,10 +996,10 @@ export const PartnerDashboard: React.FC = () => {
                       Your transfer reference has been recorded and submitted to the <strong>GenQuantis™ Finance Directorate</strong>. As third-party payment gateways (Cashfree / Razorpay) are not utilized, our accounts team manually reconciles incoming credits against our <strong>State Bank of India</strong> corporate account statements.
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs bg-white p-4 rounded-xl border border-blue-100 text-slate-800">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs bg-white p-4 rounded-xl border border-orange-100 text-slate-800">
                       <div>
                         <span className="text-slate-400 block text-[10px] uppercase font-bold">Submitted UTR / Ref No</span>
-                        <span className="font-mono font-bold text-blue-900">{selectedApp.paymentDetails?.utrNumber}</span>
+                        <span className="font-mono font-bold text-orange-950">{selectedApp.paymentDetails?.utrNumber}</span>
                       </div>
                       <div>
                         <span className="text-slate-400 block text-[10px] uppercase font-bold">Transfer Mode</span>
@@ -1020,14 +1020,14 @@ export const PartnerDashboard: React.FC = () => {
                     </div>
 
                     {/* Support Helpdesk for Immediate Verification */}
-                    <div className="p-4 bg-white/80 rounded-xl border border-blue-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+                    <div className="p-4 bg-white/80 rounded-xl border border-orange-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
                       <div className="flex items-center gap-2 text-slate-700">
-                        <PhoneCall className="w-4 h-4 text-blue-600" />
+                        <PhoneCall className="w-4 h-4 text-orange-600" />
                         <span>Need urgent reconciliation assistance? Call Finance Desk: <strong>+91 7036951155</strong></span>
                       </div>
                       <a
                         href="tel:7036951155"
-                        className="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-[11px] inline-flex items-center gap-1 self-start sm:self-auto"
+                        className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-white font-semibold text-[11px] inline-flex items-center gap-1 self-start sm:self-auto"
                       >
                         <PhoneCall className="w-3 h-3" />
                         <span>Call Desk</span>
@@ -1039,7 +1039,7 @@ export const PartnerDashboard: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => setIsEditingPayment(true)}
-                        className="text-xs text-blue-600 hover:text-blue-800 font-semibold underline"
+                        className="text-xs text-orange-600 hover:text-orange-800 font-semibold underline"
                       >
                         Need to edit or correct UTR details?
                       </button>
@@ -1053,12 +1053,12 @@ export const PartnerDashboard: React.FC = () => {
                   <div className="bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 rounded-2xl p-6 text-white shadow-lg space-y-4">
                     <div className="flex items-center justify-between border-b border-white/10 pb-3">
                       <div className="flex items-center gap-2">
-                        <Landmark className="w-5 h-5 text-cyan-400" />
+                        <Landmark className="w-5 h-5 text-orange-400" />
                         <h4 className="font-extrabold text-sm sm:text-base tracking-wide text-white">
                           Official Corporate Bank Account Details
                         </h4>
                       </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-300 bg-cyan-950/60 px-2.5 py-1 rounded-full border border-cyan-500/30">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-orange-300 bg-cyan-950/60 px-2.5 py-1 rounded-full border border-cyan-500/30">
                         Direct Wire / RTGS / NEFT / IMPS
                       </span>
                     </div>
@@ -1072,7 +1072,7 @@ export const PartnerDashboard: React.FC = () => {
                       <div className="bg-white/10 p-3.5 rounded-xl border border-white/15">
                         <span className="text-[10px] text-slate-400 uppercase font-bold block">Account Number</span>
                         <div className="flex items-center justify-between gap-2 mt-1">
-                          <span className="font-mono text-base font-bold text-cyan-300 tracking-wider">
+                          <span className="font-mono text-base font-bold text-orange-300 tracking-wider">
                             {OFFICIAL_BANK_DETAILS.accountNumber}
                           </span>
                           <button
@@ -1090,7 +1090,7 @@ export const PartnerDashboard: React.FC = () => {
                       <div className="bg-white/10 p-3.5 rounded-xl border border-white/15">
                         <span className="text-[10px] text-slate-400 uppercase font-bold block">IFSC Code</span>
                         <div className="flex items-center justify-between gap-2 mt-1">
-                          <span className="font-mono text-base font-bold text-cyan-300 tracking-wider">
+                          <span className="font-mono text-base font-bold text-orange-300 tracking-wider">
                             {OFFICIAL_BANK_DETAILS.ifscCode}
                           </span>
                           <button
@@ -1145,7 +1145,7 @@ export const PartnerDashboard: React.FC = () => {
                           <span className="text-xs font-semibold text-slate-200">
                             {OFFICIAL_BANK_DETAILS.accountType}
                           </span>
-                          <span className="text-[11px] font-mono font-bold text-cyan-300">
+                          <span className="text-[11px] font-mono font-bold text-orange-300">
                             {OFFICIAL_BANK_DETAILS.contactNumber}
                           </span>
                         </div>
@@ -1176,7 +1176,7 @@ export const PartnerDashboard: React.FC = () => {
                           value={utrNumber}
                           onChange={(e) => setUtrNumber(e.target.value)}
                           placeholder="e.g. SBIN26034189218 or 12-digit UTR"
-                          className="w-full px-3.5 py-2.5 text-xs font-mono rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                          className="w-full px-3.5 py-2.5 text-xs font-mono rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white"
                         />
                       </div>
 
@@ -1188,7 +1188,7 @@ export const PartnerDashboard: React.FC = () => {
                         <select
                           value={paymentMode}
                           onChange={(e) => setPaymentMode(e.target.value)}
-                          className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                          className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white"
                         >
                           <option value="NEFT">NEFT (National Electronic Funds Transfer)</option>
                           <option value="RTGS">RTGS (Real Time Gross Settlement)</option>
@@ -1209,7 +1209,7 @@ export const PartnerDashboard: React.FC = () => {
                           value={payerName}
                           onChange={(e) => setPayerName(e.target.value)}
                           placeholder="Name appearing on remitting bank account"
-                          className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                          className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white"
                         />
                       </div>
 
@@ -1223,7 +1223,7 @@ export const PartnerDashboard: React.FC = () => {
                           value={payerBank}
                           onChange={(e) => setPayerBank(e.target.value)}
                           placeholder="e.g. State Bank of India, HDFC, ICICI"
-                          className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                          className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white"
                         />
                       </div>
 
@@ -1237,7 +1237,7 @@ export const PartnerDashboard: React.FC = () => {
                             type="file"
                             accept="image/*,application/pdf"
                             onChange={handlePaymentProofFileChange}
-                            className="text-xs text-slate-500 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer"
+                            className="text-xs text-slate-500 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100 cursor-pointer"
                           />
                           {paymentProofFile && (
                             <span className="text-xs font-medium text-emerald-600 flex items-center gap-1">
@@ -1257,7 +1257,7 @@ export const PartnerDashboard: React.FC = () => {
                       <button
                         type="submit"
                         disabled={isSubmittingPayment}
-                        className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs transition-all shadow-md flex items-center gap-2 disabled:opacity-50"
+                        className="px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-white font-bold text-xs transition-all shadow-md flex items-center gap-2 disabled:opacity-50"
                       >
                         {isSubmittingPayment ? (
                           <>
@@ -1305,7 +1305,7 @@ export const PartnerDashboard: React.FC = () => {
                 ].map((mod, i) => (
                   <div key={i} className="p-4 rounded-2xl border border-slate-200 bg-slate-50 space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-100 px-2.5 py-0.5 rounded">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-orange-600 bg-orange-100 px-2.5 py-0.5 rounded">
                         {mod.duration}
                       </span>
                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${
@@ -1338,7 +1338,7 @@ export const PartnerDashboard: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setIsRegisteringLead(true)}
-                  className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs flex items-center gap-2 shadow-md transition-all self-start sm:self-auto"
+                  className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-white font-semibold text-xs flex items-center gap-2 shadow-md transition-all self-start sm:self-auto"
                 >
                   <UserPlus className="w-4 h-4" />
                   <span>Register Investor Lead</span>
@@ -1350,7 +1350,7 @@ export const PartnerDashboard: React.FC = () => {
                 <div className="bg-gradient-to-br from-slate-900 to-blue-950 rounded-3xl p-6 sm:p-8 text-white shadow-2xl border border-white/10 space-y-6">
                   <div className="flex items-center justify-between border-b border-white/10 pb-4">
                     <div>
-                      <h4 className="text-base font-bold text-cyan-300">Register Prospective Franchise Investor</h4>
+                      <h4 className="text-base font-bold text-orange-300">Register Prospective Franchise Investor</h4>
                       <p className="text-xs text-slate-300 font-light">Submitting locks in priority registration rights for 180 days</p>
                     </div>
                     <button
@@ -1500,7 +1500,7 @@ export const PartnerDashboard: React.FC = () => {
                     ) : (
                       partnerLeads.map(lead => (
                         <tr key={lead.id} className="hover:bg-slate-50 transition-colors">
-                          <td className="py-3.5 font-mono font-bold text-blue-900">{lead.id}</td>
+                          <td className="py-3.5 font-mono font-bold text-orange-950">{lead.id}</td>
                           <td className="py-3.5">
                             <span className="font-semibold text-slate-900 block">{lead.investorName}</span>
                             <span className="text-[11px] text-slate-500">{lead.contactNumber}</span>
@@ -1509,7 +1509,7 @@ export const PartnerDashboard: React.FC = () => {
                           <td className="py-3.5 text-slate-700">{lead.investmentBudget}</td>
                           <td className="py-3.5 text-slate-500">{new Date(lead.dateIntroduced).toLocaleDateString()}</td>
                           <td className="py-3.5">
-                            <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-blue-100 text-blue-800 uppercase tracking-wider">
+                            <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-orange-100 text-orange-800 uppercase tracking-wider">
                               {lead.status.replace(/_/g, ' ')}
                             </span>
                           </td>
@@ -1532,7 +1532,7 @@ export const PartnerDashboard: React.FC = () => {
             <div className="flex items-start justify-between gap-4 border-b border-slate-100 pb-3">
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="w-7 h-7 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                  <span className="w-7 h-7 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center">
                     <FileText className="w-4 h-4" />
                   </span>
                   <h3 className="font-extrabold text-base sm:text-lg text-slate-900">
@@ -1626,7 +1626,7 @@ export const PartnerDashboard: React.FC = () => {
                           className="px-3 py-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold text-xs flex items-center gap-1.5 shadow-sm transition-colors"
                           title="Open full-resolution image in new browser tab"
                         >
-                          <Maximize2 className="w-3.5 h-3.5 text-blue-600" />
+                          <Maximize2 className="w-3.5 h-3.5 text-orange-600" />
                           <span>Fullscreen in New Tab</span>
                         </a>
                       </div>
@@ -1650,7 +1650,7 @@ export const PartnerDashboard: React.FC = () => {
                     {/* PDF Toolbar */}
                     <div className="w-full flex items-center justify-between pb-2 mb-2 border-b border-slate-200 text-xs">
                       <div className="flex items-center gap-2 text-slate-700">
-                        <FileText className="w-4 h-4 text-blue-600" />
+                        <FileText className="w-4 h-4 text-orange-600" />
                         <span className="font-bold">{previewDoc.fileName}</span>
                         <span className="text-[11px] text-slate-500 font-mono">({previewDoc.fileSize || 'PDF'})</span>
                       </div>
@@ -1661,7 +1661,7 @@ export const PartnerDashboard: React.FC = () => {
                         className="px-3 py-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold text-xs flex items-center gap-1.5 shadow-sm transition-colors"
                         title="Open PDF in full browser window"
                       >
-                        <ExternalLink className="w-3.5 h-3.5 text-blue-600" />
+                        <ExternalLink className="w-3.5 h-3.5 text-orange-600" />
                         <span>Open PDF in Full Window</span>
                       </a>
                     </div>
@@ -1673,7 +1673,7 @@ export const PartnerDashboard: React.FC = () => {
                   </div>
                 ) : (
                   <div className="text-center p-8 bg-white rounded-2xl border border-slate-200 max-w-md shadow-sm space-y-4">
-                    <div className="w-16 h-16 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto border border-blue-200">
+                    <div className="w-16 h-16 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mx-auto border border-orange-200">
                       <FileText className="w-8 h-8" />
                     </div>
                     <div>
@@ -1683,7 +1683,7 @@ export const PartnerDashboard: React.FC = () => {
                     <a
                       href={previewDoc.fileDataUrl}
                       download={previewDoc.fileName}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow transition-all"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-white font-bold text-xs shadow transition-all"
                     >
                       <Download className="w-3.5 h-3.5" />
                       <span>Download Original File</span>
@@ -1692,12 +1692,12 @@ export const PartnerDashboard: React.FC = () => {
                 )
               ) : (
                 <div className="flex flex-col items-center justify-center text-center p-8 bg-white rounded-3xl border border-slate-200 max-w-lg shadow-sm space-y-4">
-                  <div className="w-16 h-16 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200 flex items-center justify-center shadow-inner">
+                  <div className="w-16 h-16 rounded-2xl bg-orange-50 text-orange-600 border border-orange-200 flex items-center justify-center shadow-inner">
                     <FileText className="w-8 h-8" />
                   </div>
                   <div className="space-y-1.5">
                     <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-700 border border-slate-200">
-                      <ShieldCheck className="w-3 h-3 text-blue-600" />
+                      <ShieldCheck className="w-3 h-3 text-orange-600" />
                       <span>Document Record</span>
                     </div>
                     <h4 className="font-extrabold text-slate-900 text-base">
@@ -1718,7 +1718,7 @@ export const PartnerDashboard: React.FC = () => {
                   <a
                     href={previewDoc.fileDataUrl}
                     download={previewDoc.fileName}
-                    className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-md shadow-blue-500/20 transition-all"
+                    className="px-4 py-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-white font-bold text-xs flex items-center gap-1.5 shadow-md shadow-orange-500/20 transition-all"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>Download File</span>

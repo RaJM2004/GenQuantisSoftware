@@ -446,9 +446,9 @@ export const ApplyPathway: React.FC = () => {
           {/* Header Breadcrumbs */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
             <div className="flex items-center gap-2 text-xs text-slate-500">
-              <Link to="/" className="hover:text-blue-600 transition-colors">Home</Link>
+              <Link to="/" className="hover:text-orange-600 transition-colors">Home</Link>
               <span>/</span>
-              <Link to="/partner-portal" className="hover:text-blue-600 transition-colors">Partner & Investor Portal</Link>
+              <Link to="/partner-portal" className="hover:text-orange-600 transition-colors">Partner & Investor Portal</Link>
               <span>/</span>
               <span className="text-slate-800 font-medium">Application Pathway</span>
             </div>
@@ -456,7 +456,7 @@ export const ApplyPathway: React.FC = () => {
             <button
               type="button"
               onClick={handleFillDemoData}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100/80 hover:bg-blue-200 text-blue-700 text-xs font-semibold transition-colors"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/80 hover:bg-blue-200 text-orange-700 text-xs font-semibold transition-colors"
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>Fill Sample Profile (Instant Demo)</span>
@@ -465,9 +465,9 @@ export const ApplyPathway: React.FC = () => {
 
           {/* Banner */}
           <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-indigo-950 rounded-3xl p-6 sm:p-10 text-white shadow-xl mb-10 relative overflow-hidden">
-            <div className="absolute right-0 top-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute right-0 top-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-400/30">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/20 text-orange-300 text-xs font-semibold uppercase tracking-wider mb-4 border border-orange-400/30">
                 <Briefcase className="w-3.5 h-3.5" />
                 <span>{pathwayTitles[currentPathway].badge}</span>
               </div>
@@ -492,7 +492,7 @@ export const ApplyPathway: React.FC = () => {
                     }}
                     className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                       currentPathway === p
-                        ? 'bg-white text-blue-950 shadow-md font-bold'
+                        ? 'bg-white text-orange-950 shadow-md font-bold'
                         : 'bg-white/10 hover:bg-white/20 text-white border border-white/10'
                     }`}
                   >
@@ -505,7 +505,7 @@ export const ApplyPathway: React.FC = () => {
 
           {/* Submission Success Dialog */}
           {submittedAppId ? (
-            <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-blue-100 text-center max-w-3xl mx-auto animate-fade-in-up">
+            <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-orange-100 text-center max-w-3xl mx-auto animate-fade-in-up">
               <div className="w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-6">
                 <CheckCircle className="w-10 h-10" />
               </div>
@@ -520,23 +520,23 @@ export const ApplyPathway: React.FC = () => {
                 Please save your unique reference number below for live status tracking.
               </p>
 
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-2xl p-6 mb-6 max-w-md mx-auto">
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-orange-200 rounded-2xl p-6 mb-6 max-w-md mx-auto">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-800 text-[11px] font-mono mb-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                   <Database className="w-3.5 h-3.5 text-emerald-600" />
                   <span>{storageTarget}</span>
                 </div>
-                <p className="text-xs text-blue-600 font-semibold uppercase tracking-wider mb-1">
+                <p className="text-xs text-orange-600 font-semibold uppercase tracking-wider mb-1">
                   Mandatory Application Reference ID
                 </p>
                 <div className="flex items-center justify-center gap-2">
-                  <div className="text-3xl font-extrabold text-blue-950 tracking-wider">
+                  <div className="text-3xl font-extrabold text-orange-950 tracking-wider">
                     {submittedAppId}
                   </div>
                   <button
                     type="button"
                     onClick={handleCopyAppId}
-                    className="p-2 rounded-xl bg-white hover:bg-blue-100/70 border border-blue-200 text-blue-700 shadow-sm transition-all flex items-center gap-1 text-xs font-semibold"
+                    className="p-2 rounded-xl bg-white hover:bg-orange-100/70 border border-orange-200 text-orange-700 shadow-sm transition-all flex items-center gap-1 text-xs font-semibold"
                     title="Copy Application ID"
                   >
                     {copiedId ? (
@@ -607,7 +607,7 @@ export const ApplyPathway: React.FC = () => {
               <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 mb-8 max-w-lg mx-auto text-left space-y-2">
                 <div className="flex items-center justify-between text-xs">
                   <span className="font-bold text-slate-700 flex items-center gap-1.5">
-                    <ShieldCheck className="w-4 h-4 text-blue-600" />
+                    <ShieldCheck className="w-4 h-4 text-orange-600" />
                     <span>Headquarters Scrutiny Docket:</span>
                   </span>
                   <span className="text-slate-500 font-mono text-[11px]">
@@ -622,12 +622,12 @@ export const ApplyPathway: React.FC = () => {
               {/* Status roadmap */}
               <div className="bg-slate-50 rounded-2xl p-6 text-left mb-8 max-w-xl mx-auto border border-slate-200">
                 <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4 flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-blue-600" />
+                  <ShieldCheck className="w-4 h-4 text-orange-600" />
                   <span>Mandatory Next Steps & Screening Workflow:</span>
                 </h4>
                 <ol className="space-y-3 text-xs text-slate-600">
                   <li className="flex items-start gap-2.5">
-                    <span className="w-5 h-5 rounded-full bg-blue-600 text-white font-bold text-[10px] flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+                    <span className="w-5 h-5 rounded-full bg-orange-500 text-white font-bold text-[10px] flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
                     <span><strong>Stage 1 - Document & Identity Scrutiny:</strong> Our compliance team verifies your government IDs and company registrations.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
@@ -648,7 +648,7 @@ export const ApplyPathway: React.FC = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   to={`/portal/partner-dashboard?appId=${submittedAppId}`}
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-all shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-white font-semibold text-sm transition-all shadow-lg shadow-orange-500/25 flex items-center justify-center gap-2"
                 >
                   <span>Open Your Applicant Dashboard</span>
                   <ArrowRight className="w-4 h-4" />
@@ -668,7 +668,7 @@ export const ApplyPathway: React.FC = () => {
                 {/* Active Step Progress Summary on Mobile & Tablet */}
                 <div className="flex items-center justify-between gap-3 pb-3 mb-3 border-b border-slate-100">
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <span className="w-6 h-6 rounded-lg bg-blue-600 text-white text-xs font-bold flex items-center justify-center flex-shrink-0 shadow-xs">
+                    <span className="w-6 h-6 rounded-lg bg-orange-500 text-white text-xs font-bold flex items-center justify-center flex-shrink-0 shadow-xs">
                       {currentStep}
                     </span>
                     <div className="min-w-0">
@@ -681,7 +681,7 @@ export const ApplyPathway: React.FC = () => {
                     </div>
                   </div>
 
-                  <span className="text-[11px] font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200/80 flex-shrink-0">
+                  <span className="text-[11px] font-bold text-orange-700 bg-orange-50 px-2.5 py-1 rounded-full border border-orange-200/80 flex-shrink-0">
                     {Math.round((currentStep / steps.length) * 100)}% Complete
                   </span>
                 </div>
@@ -706,9 +706,9 @@ export const ApplyPathway: React.FC = () => {
                         onClick={() => setCurrentStep(s.number)}
                         className={`flex items-start sm:items-center gap-2 p-2 sm:p-2.5 rounded-xl transition-all text-left min-w-0 min-h-[50px] ${
                           isActive
-                            ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-500/20'
+                            ? 'bg-orange-500 text-white shadow-md ring-2 ring-blue-500/20'
                             : isDone
-                            ? 'bg-blue-50 text-blue-900 border border-blue-200 hover:bg-blue-100/70'
+                            ? 'bg-orange-50 text-orange-950 border border-orange-200 hover:bg-orange-100/70'
                             : 'bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200/70'
                         }`}
                       >
@@ -716,19 +716,19 @@ export const ApplyPathway: React.FC = () => {
                           isActive
                             ? 'bg-white/25 text-white'
                             : isDone
-                            ? 'bg-blue-200 text-blue-900 font-extrabold'
+                            ? 'bg-blue-200 text-orange-950 font-extrabold'
                             : 'bg-slate-200 text-slate-700'
                         }`}>
                           {isDone ? '✓' : s.number}
                         </div>
                         <div className="min-w-0 flex-1">
                           <p className={`text-[10px] sm:text-[11px] font-bold leading-tight break-words line-clamp-2 ${
-                            isActive ? 'text-white' : isDone ? 'text-blue-950' : 'text-slate-800'
+                            isActive ? 'text-white' : isDone ? 'text-orange-950' : 'text-slate-800'
                           }`}>
                             {s.label}
                           </p>
                           <span className={`text-[9px] block uppercase font-medium mt-0.5 ${
-                            isActive ? 'text-white/80' : isDone ? 'text-blue-600 font-semibold' : 'text-slate-400'
+                            isActive ? 'text-white/80' : isDone ? 'text-orange-600 font-semibold' : 'text-slate-400'
                           }`}>
                             {isDone ? 'Done' : `Step 0${s.number}`}
                           </span>
@@ -745,7 +745,7 @@ export const ApplyPathway: React.FC = () => {
                 {currentStep === 1 && (
                   <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200 space-y-8 animate-fade-in-up">
                     <div className="border-b border-slate-100 pb-5">
-                      <div className="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider mb-1">
+                      <div className="flex items-center gap-2 text-orange-600 text-xs font-bold uppercase tracking-wider mb-1">
                         <User className="w-4 h-4" />
                         <span>Section 01 of 06</span>
                       </div>
@@ -768,7 +768,7 @@ export const ApplyPathway: React.FC = () => {
                           value={individual.fullName}
                           onChange={(e) => setIndividual({ ...individual, fullName: e.target.value })}
                           placeholder="e.g. Dr. Arunachalam Pillai"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
 
@@ -782,7 +782,7 @@ export const ApplyPathway: React.FC = () => {
                           value={individual.nameAsPerGovtId}
                           onChange={(e) => setIndividual({ ...individual, nameAsPerGovtId: e.target.value })}
                           placeholder="Exact match with PAN / Passport"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
 
@@ -795,7 +795,7 @@ export const ApplyPathway: React.FC = () => {
                           required
                           value={individual.dob}
                           onChange={(e) => setIndividual({ ...individual, dob: e.target.value })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
 
@@ -806,7 +806,7 @@ export const ApplyPathway: React.FC = () => {
                         <select
                           value={individual.gender}
                           onChange={(e) => setIndividual({ ...individual, gender: e.target.value })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         >
                           <option value="Male">Male</option>
                           <option value="Female">Female</option>
@@ -823,7 +823,7 @@ export const ApplyPathway: React.FC = () => {
                           required
                           value={individual.nationality}
                           onChange={(e) => setIndividual({ ...individual, nationality: e.target.value })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
 
@@ -837,7 +837,7 @@ export const ApplyPathway: React.FC = () => {
                           value={individual.mobile}
                           onChange={(e) => setIndividual({ ...individual, mobile: e.target.value })}
                           placeholder="+91 98765 43210"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
 
@@ -851,7 +851,7 @@ export const ApplyPathway: React.FC = () => {
                           value={individual.whatsapp}
                           onChange={(e) => setIndividual({ ...individual, whatsapp: e.target.value })}
                           placeholder="+91 98765 43210"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
 
@@ -865,7 +865,7 @@ export const ApplyPathway: React.FC = () => {
                           value={individual.email}
                           onChange={(e) => setIndividual({ ...individual, email: e.target.value })}
                           placeholder="name@domain.com"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
 
@@ -879,7 +879,7 @@ export const ApplyPathway: React.FC = () => {
                           value={individual.currentOccupation}
                           onChange={(e) => setIndividual({ ...individual, currentOccupation: e.target.value })}
                           placeholder="e.g. Managing Director / Radiologist"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
                     </div>
@@ -896,7 +896,7 @@ export const ApplyPathway: React.FC = () => {
                           value={individual.residentialAddress}
                           onChange={(e) => setIndividual({ ...individual, residentialAddress: e.target.value })}
                           placeholder="Permanent residence as per Aadhaar / Passport"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
 
@@ -910,7 +910,7 @@ export const ApplyPathway: React.FC = () => {
                           value={individual.correspondenceAddress}
                           onChange={(e) => setIndividual({ ...individual, correspondenceAddress: e.target.value })}
                           placeholder="Official postal communication address"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
                     </div>
@@ -926,7 +926,7 @@ export const ApplyPathway: React.FC = () => {
                           value={individual.state}
                           onChange={(e) => setIndividual({ ...individual, state: e.target.value })}
                           placeholder="e.g. Tamil Nadu"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
                       <div>
@@ -939,7 +939,7 @@ export const ApplyPathway: React.FC = () => {
                           value={individual.district}
                           onChange={(e) => setIndividual({ ...individual, district: e.target.value })}
                           placeholder="e.g. Chennai"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
                       <div>
@@ -953,7 +953,7 @@ export const ApplyPathway: React.FC = () => {
                           value={individual.pincode}
                           onChange={(e) => setIndividual({ ...individual, pincode: e.target.value })}
                           placeholder="e.g. 600040"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
                     </div>
@@ -975,7 +975,7 @@ export const ApplyPathway: React.FC = () => {
                             value={individual.educationalQualification}
                             onChange={(e) => setIndividual({ ...individual, educationalQualification: e.target.value })}
                             placeholder="Degree, University, Specialization"
-                            className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                            className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                           />
                         </div>
                         <div>
@@ -987,7 +987,7 @@ export const ApplyPathway: React.FC = () => {
                             value={individual.professionalQualification}
                             onChange={(e) => setIndividual({ ...individual, professionalQualification: e.target.value })}
                             placeholder="e.g. Fellow, Memberships, Medical Council No."
-                            className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                            className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                           />
                         </div>
                       </div>
@@ -998,7 +998,7 @@ export const ApplyPathway: React.FC = () => {
                           <label className="block text-[11px] font-bold text-slate-700 mb-1">
                             Total Experience
                           </label>
-                          <div className="text-lg font-extrabold text-blue-900">{individual.totalExperienceYears} Yrs</div>
+                          <div className="text-lg font-extrabold text-orange-950">{individual.totalExperienceYears} Yrs</div>
                           <input
                             type="range"
                             min="0"
@@ -1013,7 +1013,7 @@ export const ApplyPathway: React.FC = () => {
                           <label className="block text-[11px] font-bold text-slate-700 mb-1">
                             Business Exp.
                           </label>
-                          <div className="text-lg font-extrabold text-blue-900">{individual.businessExperienceYears} Yrs</div>
+                          <div className="text-lg font-extrabold text-orange-950">{individual.businessExperienceYears} Yrs</div>
                           <input
                             type="range"
                             min="0"
@@ -1028,7 +1028,7 @@ export const ApplyPathway: React.FC = () => {
                           <label className="block text-[11px] font-bold text-slate-700 mb-1">
                             Healthcare Exp.
                           </label>
-                          <div className="text-lg font-extrabold text-blue-900">{individual.healthcareExperienceYears} Yrs</div>
+                          <div className="text-lg font-extrabold text-orange-950">{individual.healthcareExperienceYears} Yrs</div>
                           <input
                             type="range"
                             min="0"
@@ -1043,7 +1043,7 @@ export const ApplyPathway: React.FC = () => {
                           <label className="block text-[11px] font-bold text-slate-700 mb-1">
                             Franchise Exp.
                           </label>
-                          <div className="text-lg font-extrabold text-blue-900">{individual.franchiseExperienceYears} Yrs</div>
+                          <div className="text-lg font-extrabold text-orange-950">{individual.franchiseExperienceYears} Yrs</div>
                           <input
                             type="range"
                             min="0"
@@ -1058,7 +1058,7 @@ export const ApplyPathway: React.FC = () => {
                           <label className="block text-[11px] font-bold text-slate-700 mb-1">
                             Channel Exp.
                           </label>
-                          <div className="text-lg font-extrabold text-blue-900">{individual.channelPartnerExperienceYears} Yrs</div>
+                          <div className="text-lg font-extrabold text-orange-950">{individual.channelPartnerExperienceYears} Yrs</div>
                           <input
                             type="range"
                             min="0"
@@ -1082,7 +1082,7 @@ export const ApplyPathway: React.FC = () => {
                           value={individual.linkedinProfile}
                           onChange={(e) => setIndividual({ ...individual, linkedinProfile: e.target.value })}
                           placeholder="https://linkedin.com/in/username"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
                       <div>
@@ -1095,7 +1095,7 @@ export const ApplyPathway: React.FC = () => {
                           value={individual.reference1Name}
                           onChange={(e) => setIndividual({ ...individual, reference1Name: e.target.value })}
                           placeholder="Name, Designation, Phone"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
                       <div>
@@ -1107,7 +1107,7 @@ export const ApplyPathway: React.FC = () => {
                           value={individual.existingBusinessInterests}
                           onChange={(e) => setIndividual({ ...individual, existingBusinessInterests: e.target.value })}
                           placeholder="Directorships or businesses owned"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
                     </div>
@@ -1118,7 +1118,7 @@ export const ApplyPathway: React.FC = () => {
                 {currentStep === 2 && (
                   <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200 space-y-8 animate-fade-in-up">
                     <div className="border-b border-slate-100 pb-5">
-                      <div className="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider mb-1">
+                      <div className="flex items-center gap-2 text-orange-600 text-xs font-bold uppercase tracking-wider mb-1">
                         <Building2 className="w-4 h-4" />
                         <span>Section 02 of 06</span>
                       </div>
@@ -1141,7 +1141,7 @@ export const ApplyPathway: React.FC = () => {
                           value={business.legalEntityName}
                           onChange={(e) => setBusiness({ ...business, legalEntityName: e.target.value })}
                           placeholder="e.g. MediQuant Diagnostic Solutions Pvt Ltd"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
 
@@ -1154,7 +1154,7 @@ export const ApplyPathway: React.FC = () => {
                           value={business.tradeBrandName}
                           onChange={(e) => setBusiness({ ...business, tradeBrandName: e.target.value })}
                           placeholder="Brand name if different"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
 
@@ -1165,7 +1165,7 @@ export const ApplyPathway: React.FC = () => {
                         <select
                           value={business.entityType}
                           onChange={(e) => setBusiness({ ...business, entityType: e.target.value as any })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         >
                           <option value="Pvt Ltd">Private Limited Company</option>
                           <option value="LLP">Limited Liability Partnership (LLP)</option>
@@ -1186,7 +1186,7 @@ export const ApplyPathway: React.FC = () => {
                           value={business.gstin}
                           onChange={(e) => setBusiness({ ...business, gstin: e.target.value })}
                           placeholder="15-digit GSTIN"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none uppercase"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none uppercase"
                         />
                       </div>
 
@@ -1200,7 +1200,7 @@ export const ApplyPathway: React.FC = () => {
                           value={business.cinOrPan}
                           onChange={(e) => setBusiness({ ...business, cinOrPan: e.target.value })}
                           placeholder="Corporate CIN or PAN"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none uppercase"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none uppercase"
                         />
                       </div>
 
@@ -1212,7 +1212,7 @@ export const ApplyPathway: React.FC = () => {
                           type="date"
                           value={business.dateOfIncorporation}
                           onChange={(e) => setBusiness({ ...business, dateOfIncorporation: e.target.value })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
 
@@ -1225,7 +1225,7 @@ export const ApplyPathway: React.FC = () => {
                           value={business.website}
                           onChange={(e) => setBusiness({ ...business, website: e.target.value })}
                           placeholder="https://company.com"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
 
@@ -1239,7 +1239,7 @@ export const ApplyPathway: React.FC = () => {
                           value={business.corporateEmail}
                           onChange={(e) => setBusiness({ ...business, corporateEmail: e.target.value })}
                           placeholder="office@company.com"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
 
@@ -1252,7 +1252,7 @@ export const ApplyPathway: React.FC = () => {
                           value={business.telephone}
                           onChange={(e) => setBusiness({ ...business, telephone: e.target.value })}
                           placeholder="STD Code + Phone"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
                     </div>
@@ -1269,7 +1269,7 @@ export const ApplyPathway: React.FC = () => {
                           value={business.registeredOffice}
                           onChange={(e) => setBusiness({ ...business, registeredOffice: e.target.value })}
                           placeholder="Address as recorded in MCA / Registrar of Firms"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
 
@@ -1283,7 +1283,7 @@ export const ApplyPathway: React.FC = () => {
                           value={business.operatingOffice}
                           onChange={(e) => setBusiness({ ...business, operatingOffice: e.target.value })}
                           placeholder="Facility location where operations are hosted"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
                     </div>
@@ -1298,7 +1298,7 @@ export const ApplyPathway: React.FC = () => {
                           type="number"
                           value={business.teamStrength}
                           onChange={(e) => setBusiness({ ...business, teamStrength: Number(e.target.value) })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
 
@@ -1310,7 +1310,7 @@ export const ApplyPathway: React.FC = () => {
                           type="number"
                           value={business.proposedTeamStrength}
                           onChange={(e) => setBusiness({ ...business, proposedTeamStrength: Number(e.target.value) })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                         />
                       </div>
 
@@ -1321,7 +1321,7 @@ export const ApplyPathway: React.FC = () => {
                         <select
                           value={business.investmentCapacity}
                           onChange={(e) => setBusiness({ ...business, investmentCapacity: e.target.value })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none font-semibold text-blue-900"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none font-semibold text-orange-950"
                         >
                           <option value="₹25 Lakhs - ₹50 Lakhs">₹25 Lakhs - ₹50 Lakhs</option>
                           <option value="₹50 Lakhs - ₹1 Crore">₹50 Lakhs - ₹1 Crore</option>
@@ -1343,7 +1343,7 @@ export const ApplyPathway: React.FC = () => {
                         value={business.infrastructureCapability}
                         onChange={(e) => setBusiness({ ...business, infrastructureCapability: e.target.value })}
                         placeholder="Describe existing laboratory space, square footage, air conditioning, power backup, server/broadband connectivity, and diagnostic equipment."
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                       />
                     </div>
                   </div>
@@ -1353,7 +1353,7 @@ export const ApplyPathway: React.FC = () => {
                 {currentStep === 3 && (
                   <div className="space-y-6 animate-fade-in-up">
                     <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200">
-                      <div className="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider mb-1">
+                      <div className="flex items-center gap-2 text-orange-600 text-xs font-bold uppercase tracking-wider mb-1">
                         <MapPin className="w-4 h-4" />
                         <span>Section 03 of 06</span>
                       </div>
@@ -1382,7 +1382,7 @@ export const ApplyPathway: React.FC = () => {
                         value={territory.notes}
                         onChange={(e) => setTerritory({ ...territory, notes: e.target.value })}
                         placeholder="e.g. Priority focus on Chennai OMR corridor and Coimbatore industrial cluster."
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-orange-500 focus:outline-none"
                       />
                     </div>
                   </div>
@@ -1392,7 +1392,7 @@ export const ApplyPathway: React.FC = () => {
                 {currentStep === 4 && (
                   <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200 space-y-8 animate-fade-in-up">
                     <div className="border-b border-slate-100 pb-5">
-                      <div className="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider mb-1">
+                      <div className="flex items-center gap-2 text-orange-600 text-xs font-bold uppercase tracking-wider mb-1">
                         <FileText className="w-4 h-4" />
                         <span>Section 04 of 06</span>
                       </div>
@@ -1414,7 +1414,7 @@ export const ApplyPathway: React.FC = () => {
                             <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 ${
                               doc.status === 'verified'
                                 ? 'bg-emerald-100 text-emerald-700'
-                                : 'bg-blue-100 text-blue-700'
+                                : 'bg-orange-100 text-orange-700'
                             }`}>
                               <FileText className="w-5 h-5" />
                             </div>
@@ -1477,7 +1477,7 @@ export const ApplyPathway: React.FC = () => {
                                 <button
                                   type="button"
                                   onClick={() => document.getElementById(`doc-file-${doc.id}`)?.click()}
-                                  className="px-3 py-1.5 rounded-lg text-xs font-medium text-blue-700 hover:bg-blue-50 border border-blue-200 transition-colors"
+                                  className="px-3 py-1.5 rounded-lg text-xs font-medium text-orange-700 hover:bg-orange-50 border border-orange-200 transition-colors"
                                 >
                                   Replace File
                                 </button>
@@ -1494,7 +1494,7 @@ export const ApplyPathway: React.FC = () => {
                               <button
                                 type="button"
                                 onClick={() => document.getElementById(`doc-file-${doc.id}`)?.click()}
-                                className="px-4 py-2 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 transition-all shadow-sm"
+                                className="px-4 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-white flex items-center gap-2 transition-all shadow-sm"
                               >
                                 <UploadCloud className="w-4 h-4" />
                                 <span>Choose File to Upload</span>
@@ -1511,7 +1511,7 @@ export const ApplyPathway: React.FC = () => {
                 {currentStep === 5 && (
                   <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200 space-y-8 animate-fade-in-up">
                     <div className="border-b border-slate-100 pb-5">
-                      <div className="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider mb-1">
+                      <div className="flex items-center gap-2 text-orange-600 text-xs font-bold uppercase tracking-wider mb-1">
                         <ShieldCheck className="w-4 h-4" />
                         <span>Section 05 of 06</span>
                       </div>
@@ -1525,7 +1525,7 @@ export const ApplyPathway: React.FC = () => {
 
                     {/* Strict Authority Structure Callout */}
                     <div className="bg-gradient-to-br from-slate-900 to-blue-950 p-6 sm:p-8 rounded-2xl text-white space-y-4">
-                      <h3 className="text-base font-bold text-cyan-300 flex items-center gap-2">
+                      <h3 className="text-base font-bold text-orange-300 flex items-center gap-2">
                         <AlertTriangle className="w-5 h-5 text-amber-400" />
                         <span>Mandatory GenQuantis™ Authority Matrix & Non-Negotiable Limits:</span>
                       </h3>
@@ -1557,7 +1557,7 @@ export const ApplyPathway: React.FC = () => {
                           required
                           checked={declarations.truthfulDisclosure}
                           onChange={(e) => setDeclarations({ ...declarations, truthfulDisclosure: e.target.checked })}
-                          className="mt-1 w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+                          className="mt-1 w-4 h-4 rounded border-slate-300 text-orange-600 focus:ring-orange-500"
                         />
                         <span className="text-xs text-slate-700 leading-relaxed">
                           <strong>Truthful Disclosure & Due Diligence Consent:</strong> I certify that all individual, academic, corporate, and financial disclosures made herein are accurate and true. I authorize GenQuantis™ and its designated counsel to conduct due diligence, reference inquiries, and background verification.
@@ -1570,7 +1570,7 @@ export const ApplyPathway: React.FC = () => {
                           required
                           checked={declarations.noRoiGuaranteeAgreed}
                           onChange={(e) => setDeclarations({ ...declarations, noRoiGuaranteeAgreed: e.target.checked })}
-                          className="mt-1 w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+                          className="mt-1 w-4 h-4 rounded border-slate-300 text-orange-600 focus:ring-orange-500"
                         />
                         <span className="text-xs text-slate-700 leading-relaxed">
                           <strong>No-ROI & No Revenue Guarantee Covenant:</strong> I acknowledge that GenQuantis™ does NOT guarantee any commercial profits, revenue volumes, or minimum return on investment. I undertake never to misrepresent commercial terms to sub-distributors or investors.
@@ -1583,7 +1583,7 @@ export const ApplyPathway: React.FC = () => {
                           required
                           checked={declarations.noFranchiseAuthorityAgreed}
                           onChange={(e) => setDeclarations({ ...declarations, noFranchiseAuthorityAgreed: e.target.checked })}
-                          className="mt-1 w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+                          className="mt-1 w-4 h-4 rounded border-slate-300 text-orange-600 focus:ring-orange-500"
                         />
                         <span className="text-xs text-slate-700 leading-relaxed">
                           <strong>Authority Boundaries & Lead Protocol:</strong> I understand that only GenQuantis™ evaluates, approves, and executes agreements with Franchise Investors. All investor introductions must be officially routed through the GenQuantis™ Lead Management Registry.
@@ -1596,7 +1596,7 @@ export const ApplyPathway: React.FC = () => {
                           required
                           checked={declarations.antiFraudConsent}
                           onChange={(e) => setDeclarations({ ...declarations, antiFraudConsent: e.target.checked })}
-                          className="mt-1 w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+                          className="mt-1 w-4 h-4 rounded border-slate-300 text-orange-600 focus:ring-orange-500"
                         />
                         <span className="text-xs text-slate-700 leading-relaxed">
                           <strong>Anti-Fraud & Conflict-of-Interest Declaration:</strong> Neither I nor any promoter has been debarred by any medical regulator, MCA, or court of law. I undertake to immediately disclose any potential conflict of interest.
@@ -1609,7 +1609,7 @@ export const ApplyPathway: React.FC = () => {
                           required
                           checked={declarations.privacyPolicyConsent}
                           onChange={(e) => setDeclarations({ ...declarations, privacyPolicyConsent: e.target.checked })}
-                          className="mt-1 w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+                          className="mt-1 w-4 h-4 rounded border-slate-300 text-orange-600 focus:ring-orange-500"
                         />
                         <span className="text-xs text-slate-700 leading-relaxed">
                           <strong>Data Privacy, IP & Non-Disclosure:</strong> I consent to the processing of personal and business information under Indian Data Protection norms and agree to maintain strict confidentiality regarding GenQuantis™ proprietary AI algorithms and commercial terms.
@@ -1623,7 +1623,7 @@ export const ApplyPathway: React.FC = () => {
                 {currentStep === 6 && (
                   <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200 space-y-8 animate-fade-in-up">
                     <div className="border-b border-slate-100 pb-5">
-                      <div className="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider mb-1">
+                      <div className="flex items-center gap-2 text-orange-600 text-xs font-bold uppercase tracking-wider mb-1">
                         <CheckCircle className="w-4 h-4" />
                         <span>Section 06 of 06</span>
                       </div>
@@ -1641,13 +1641,13 @@ export const ApplyPathway: React.FC = () => {
                       <div className="bg-slate-50 rounded-2xl p-5 border border-slate-200 space-y-3">
                         <div className="flex items-center justify-between">
                           <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-2">
-                            <User className="w-4 h-4 text-blue-600" />
+                            <User className="w-4 h-4 text-orange-600" />
                             <span>Applicant Details</span>
                           </h4>
                           <button
                             type="button"
                             onClick={() => setCurrentStep(1)}
-                            className="text-xs text-blue-600 hover:underline font-semibold"
+                            className="text-xs text-orange-600 hover:underline font-semibold"
                           >
                             Edit
                           </button>
@@ -1666,13 +1666,13 @@ export const ApplyPathway: React.FC = () => {
                       <div className="bg-slate-50 rounded-2xl p-5 border border-slate-200 space-y-3">
                         <div className="flex items-center justify-between">
                           <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-2">
-                            <Building2 className="w-4 h-4 text-blue-600" />
+                            <Building2 className="w-4 h-4 text-orange-600" />
                             <span>Entity & Infrastructure</span>
                           </h4>
                           <button
                             type="button"
                             onClick={() => setCurrentStep(2)}
-                            className="text-xs text-blue-600 hover:underline font-semibold"
+                            className="text-xs text-orange-600 hover:underline font-semibold"
                           >
                             Edit
                           </button>
@@ -1690,13 +1690,13 @@ export const ApplyPathway: React.FC = () => {
                       <div className="bg-slate-50 rounded-2xl p-5 border border-slate-200 space-y-3">
                         <div className="flex items-center justify-between">
                           <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-2">
-                            <MapPin className="w-4 h-4 text-blue-600" />
+                            <MapPin className="w-4 h-4 text-orange-600" />
                             <span>Proposed Territory Scope</span>
                           </h4>
                           <button
                             type="button"
                             onClick={() => setCurrentStep(3)}
-                            className="text-xs text-blue-600 hover:underline font-semibold"
+                            className="text-xs text-orange-600 hover:underline font-semibold"
                           >
                             Edit
                           </button>
@@ -1709,7 +1709,7 @@ export const ApplyPathway: React.FC = () => {
                           ) : territory.selectedStates.length > 0 ? (
                             <div className="flex flex-wrap gap-1.5">
                               {territory.selectedStates.map(st => (
-                                <span key={st} className="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 text-[11px] font-medium">
+                                <span key={st} className="px-2.5 py-0.5 rounded-full bg-orange-100 text-orange-800 text-[11px] font-medium">
                                   {st}
                                 </span>
                               ))}
@@ -1727,13 +1727,13 @@ export const ApplyPathway: React.FC = () => {
                       <div className="bg-slate-50 rounded-2xl p-5 border border-slate-200 space-y-3">
                         <div className="flex items-center justify-between">
                           <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-2">
-                            <FileText className="w-4 h-4 text-blue-600" />
+                            <FileText className="w-4 h-4 text-orange-600" />
                             <span>Document Attachments</span>
                           </h4>
                           <button
                             type="button"
                             onClick={() => setCurrentStep(4)}
-                            className="text-xs text-blue-600 hover:underline font-semibold"
+                            className="text-xs text-orange-600 hover:underline font-semibold"
                           >
                             Edit
                           </button>
@@ -1798,7 +1798,7 @@ export const ApplyPathway: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setCurrentStep(prev => prev + 1)}
-                      className="w-full sm:w-auto px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center justify-center gap-2 transition-all shadow-md"
+                      className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-white text-xs font-bold flex items-center justify-center gap-2 transition-all shadow-md"
                     >
                       <span>Proceed to {steps[currentStep].label}</span>
                       <ArrowRight className="w-4 h-4" />
@@ -1844,7 +1844,7 @@ export const ApplyPathway: React.FC = () => {
                 />
               ) : (
                 <div className="text-center p-8 text-slate-600 space-y-2">
-                  <FileText className="w-12 h-12 text-blue-600 mx-auto" />
+                  <FileText className="w-12 h-12 text-orange-600 mx-auto" />
                   <p className="font-semibold text-sm">{previewDoc.fileName}</p>
                   <p className="text-xs text-slate-400">Document securely attached & verified for screening.</p>
                 </div>
@@ -1860,7 +1860,7 @@ export const ApplyPathway: React.FC = () => {
                   <a
                     href={previewDoc.fileDataUrl}
                     download={previewDoc.fileName}
-                    className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs transition-colors flex items-center gap-1.5"
+                    className="px-4 py-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-white font-semibold text-xs transition-colors flex items-center gap-1.5"
                   >
                     <span>Download File</span>
                   </a>

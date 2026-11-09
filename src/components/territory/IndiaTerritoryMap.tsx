@@ -85,7 +85,7 @@ export const IndiaTerritoryMap: React.FC<IndiaTerritoryMapProps> = ({
       <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-indigo-950 p-6 sm:p-8 text-white">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <div className="flex items-center gap-2 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-2">
+            <div className="flex items-center gap-2 text-orange-400 text-xs font-semibold uppercase tracking-wider mb-2">
               <Globe className="w-4 h-4" />
               <span>National Healthcare Network Allocation</span>
             </div>
@@ -94,7 +94,7 @@ export const IndiaTerritoryMap: React.FC<IndiaTerritoryMapProps> = ({
               <span className={`text-xs px-3 py-1 rounded-full font-medium uppercase tracking-wider ${
                 territoryType === 'approved' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40' :
                 territoryType === 'franchise' ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40' :
-                'bg-blue-500/20 text-blue-300 border border-blue-500/40'
+                'bg-orange-500/20 text-blue-300 border border-orange-500/40'
               }`}>
                 {territoryType === 'approved' ? 'Approved Territory' : territoryType === 'franchise' ? 'Franchise Site Zone' : 'Proposed Territory'}
               </span>
@@ -116,7 +116,7 @@ export const IndiaTerritoryMap: React.FC<IndiaTerritoryMapProps> = ({
                     : 'bg-white/10 hover:bg-white/20 text-white border border-white/20'
                 }`}
               >
-                <Sparkles className="w-4 h-4 text-cyan-300" />
+                <Sparkles className="w-4 h-4 text-orange-300" />
                 <span>Pan-India Coverage ({INDIA_TERRITORIES.length} States/UTs)</span>
               </button>
               {(selectedStates.length > 0 || isPanIndia) && (
@@ -137,11 +137,11 @@ export const IndiaTerritoryMap: React.FC<IndiaTerritoryMapProps> = ({
           <div className="flex items-center gap-2">
             <span className="text-slate-400">Current Scope:</span>
             {isPanIndia ? (
-              <span className="bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 px-3 py-1 rounded-full font-semibold">
+              <span className="bg-orange-500/20 text-orange-300 border border-cyan-500/40 px-3 py-1 rounded-full font-semibold">
                 ★ All-India National Footprint Selected
               </span>
             ) : selectedStates.length > 0 ? (
-              <span className="bg-blue-500/20 text-blue-300 border border-blue-500/40 px-3 py-1 rounded-full font-medium">
+              <span className="bg-orange-500/20 text-blue-300 border border-orange-500/40 px-3 py-1 rounded-full font-medium">
                 {selectedStates.length} State{selectedStates.length > 1 ? 's' : ''} / UTs Selected
               </span>
             ) : (
@@ -168,7 +168,7 @@ export const IndiaTerritoryMap: React.FC<IndiaTerritoryMapProps> = ({
               onClick={() => setSelectedZone(zone)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors whitespace-nowrap ${
                 selectedZone === zone
-                  ? 'bg-blue-600 text-white shadow-sm'
+                  ? 'bg-orange-500 text-white shadow-sm'
                   : 'bg-white text-slate-600 hover:bg-slate-200/70 border border-slate-200'
               }`}
             >
@@ -179,7 +179,7 @@ export const IndiaTerritoryMap: React.FC<IndiaTerritoryMapProps> = ({
             <button
               type="button"
               onClick={() => handleSelectZone(selectedZone)}
-              className="text-xs text-blue-600 hover:text-blue-800 font-semibold px-2 py-1 underline decoration-dotted"
+              className="text-xs text-orange-600 hover:text-orange-800 font-semibold px-2 py-1 underline decoration-dotted"
             >
               + Select All {selectedZone}
             </button>
@@ -194,7 +194,7 @@ export const IndiaTerritoryMap: React.FC<IndiaTerritoryMapProps> = ({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search state, code, hub..."
-            className="w-full pl-9 pr-3 py-1.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+            className="w-full pl-9 pr-3 py-1.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white"
           />
         </div>
       </div>
@@ -212,17 +212,17 @@ export const IndiaTerritoryMap: React.FC<IndiaTerritoryMapProps> = ({
                 onMouseLeave={() => setHoveredTerritory(null)}
                 className={`relative group rounded-2xl p-4 transition-all duration-200 border text-left cursor-pointer ${
                   isSelected
-                    ? 'bg-gradient-to-br from-blue-50 to-indigo-50/80 border-blue-400 ring-2 ring-blue-500/20 shadow-md'
+                    ? 'bg-gradient-to-br from-blue-50 to-indigo-50/80 border-orange-400 ring-2 ring-blue-500/20 shadow-md'
                     : 'bg-white hover:bg-slate-50 border-slate-200 hover:border-slate-300'
                 } ${readOnly ? 'cursor-default' : ''}`}
               >
                 <div className="flex items-start justify-between gap-2">
                   <div className="flex items-center gap-2">
-                    <span className="w-8 h-8 rounded-xl bg-slate-100 group-hover:bg-blue-100 flex items-center justify-center font-bold text-xs text-slate-700 group-hover:text-blue-700 transition-colors">
+                    <span className="w-8 h-8 rounded-xl bg-slate-100 group-hover:bg-orange-100 flex items-center justify-center font-bold text-xs text-slate-700 group-hover:text-orange-700 transition-colors">
                       {t.code}
                     </span>
                     <div>
-                      <h4 className="font-semibold text-sm text-slate-900 group-hover:text-blue-700 transition-colors flex items-center gap-1.5">
+                      <h4 className="font-semibold text-sm text-slate-900 group-hover:text-orange-700 transition-colors flex items-center gap-1.5">
                         {t.name}
                         {t.isUnionTerritory && (
                           <span className="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-normal">
@@ -238,9 +238,9 @@ export const IndiaTerritoryMap: React.FC<IndiaTerritoryMapProps> = ({
 
                   <div className="mt-1">
                     {isSelected ? (
-                      <CheckCircle2 className="w-5 h-5 text-blue-600 fill-blue-100" />
+                      <CheckCircle2 className="w-5 h-5 text-orange-600 fill-blue-100" />
                     ) : (
-                      <div className="w-5 h-5 rounded-full border-2 border-slate-300 group-hover:border-blue-400 transition-colors" />
+                      <div className="w-5 h-5 rounded-full border-2 border-slate-300 group-hover:border-orange-400 transition-colors" />
                     )}
                   </div>
                 </div>
@@ -267,7 +267,7 @@ export const IndiaTerritoryMap: React.FC<IndiaTerritoryMapProps> = ({
       {selectedStates.length > 0 && !isPanIndia && (
         <div className="p-6 bg-slate-50/70 border-t border-slate-200">
           <div className="flex items-center gap-2 mb-3">
-            <MapPin className="w-4 h-4 text-blue-600" />
+            <MapPin className="w-4 h-4 text-orange-600" />
             <span className="text-xs font-semibold text-slate-800 uppercase tracking-wider">
               Selected Proposed Territories ({selectedStates.length}):
             </span>
@@ -276,7 +276,7 @@ export const IndiaTerritoryMap: React.FC<IndiaTerritoryMapProps> = ({
             {Array.from(new Set(selectedStates)).map((st, idx) => (
               <span
                 key={`${st}-${idx}`}
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-medium border border-blue-200"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-100 text-orange-800 text-xs font-medium border border-orange-200"
               >
                 {st}
                 {!readOnly && (

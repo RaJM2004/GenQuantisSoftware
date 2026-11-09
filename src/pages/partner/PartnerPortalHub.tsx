@@ -82,7 +82,7 @@ export const PartnerPortalHub: React.FC = () => {
       id: 'pan-india',
       title: 'Pan-India Channel Partner',
       badge: 'National Master Network',
-      badgeColor: 'bg-indigo-500/20 text-indigo-300 border-indigo-400/30',
+      badgeColor: 'bg-orange-500/20 text-orange-200 border-orange-400/40',
       description: 'Nationwide institutional leadership. Identify, coordinate, and develop Regional Channel Partners while orchestrating large-scale corporate healthcare and hospital integration.',
       eligibility: [
         'National presence across multiple Indian zones',
@@ -92,14 +92,14 @@ export const PartnerPortalHub: React.FC = () => {
         'Investment commitment ₹5 Cr - ₹15 Cr+'
       ],
       authorityScope: 'Authorized to identify and recommend Regional Channel Partners. Cannot sign binding contracts or guarantee ROI on behalf of GenQuantis™.',
-      accentGradient: 'from-blue-600 via-indigo-600 to-indigo-800',
+      accentGradient: 'from-orange-600 via-amber-600 to-orange-800',
       cta: 'Apply for Pan-India Partnership'
     },
     {
       id: 'regional',
       title: 'Regional Channel Partner',
       badge: 'State & Zonal Lead',
-      badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-400/30',
+      badgeColor: 'bg-amber-500/20 text-amber-200 border-amber-400/40',
       description: 'Drive high-impact regional penetration across designated States or UTs. Build doctor networks, healthcare centers, and introduce vetted prospective Franchise Investors.',
       eligibility: [
         'Strong local commercial relationships in target State/UT',
@@ -109,14 +109,14 @@ export const PartnerPortalHub: React.FC = () => {
         'Investment capability ₹50 Lakhs - ₹3 Crores'
       ],
       authorityScope: 'Authorized to introduce and forward prospective Franchise Investors. Formally appointed ONLY by GenQuantis™.',
-      accentGradient: 'from-teal-600 via-cyan-600 to-blue-700',
+      accentGradient: 'from-amber-600 via-orange-500 to-yellow-600',
       cta: 'Apply for Regional Partnership'
     },
     {
       id: 'franchise',
       title: 'GenQuantis™ Franchise Investor',
       badge: 'Smart Diagnostic Center',
-      badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-400/30',
+      badgeColor: 'bg-orange-600/25 text-orange-200 border-orange-400/40',
       description: 'Own and operate a cutting-edge GenQuantis™ AI Diagnostic & Smart Clinic hub. Equipped with real-time biometric analysis, digital pathology, and non-invasive screening technologies.',
       eligibility: [
         '1,200 - 3,500 sq.ft prime commercial property on ground/first floor',
@@ -126,23 +126,23 @@ export const PartnerPortalHub: React.FC = () => {
         'Approved solely by GenQuantis™ Corporate Scrutiny Board'
       ],
       authorityScope: 'Direct Franchise Agreement executed solely by GenQuantis™. Channel Partners cannot sign or commit terms.',
-      accentGradient: 'from-amber-600 via-orange-600 to-rose-700',
+      accentGradient: 'from-orange-500 via-amber-600 to-rose-600',
       cta: 'Apply for Franchise Center'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
+    <div className="min-h-screen bg-orange-50/20 flex flex-col">
       <Navbar />
 
       <main className="flex-grow pt-24 pb-20">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-blue-950 to-slate-900 text-white py-16 sm:py-24">
-          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:20px_20px]" />
+        <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-zinc-950 to-slate-900 text-white py-16 sm:py-24">
+          <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#f97316_1px,transparent_1px)] [background-size:22px_22px]" />
           
           <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-400/30 text-orange-400 text-xs font-semibold uppercase tracking-wider mb-6">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Next-Gen Healthcare Partnership Ecosystem</span>
               </div>
@@ -159,7 +159,7 @@ export const PartnerPortalHub: React.FC = () => {
               <div className="flex flex-wrap items-center gap-4">
                 <a
                   href="#pathways"
-                  className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-950 font-bold text-sm shadow-xl shadow-cyan-500/25 transition-all flex items-center gap-2"
+                  className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 hover:from-orange-300 hover:to-amber-400 text-slate-950 font-bold text-sm shadow-xl shadow-orange-500/25 transition-all flex items-center gap-2"
                 >
                   <span>Select Application Pathway</span>
                   <ArrowRight className="w-4 h-4" />
@@ -168,14 +168,14 @@ export const PartnerPortalHub: React.FC = () => {
                   to="/portal/login"
                   className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-colors flex items-center gap-2"
                 >
-                  <Users className="w-4 h-4 text-cyan-300" />
+                  <Users className="w-4 h-4 text-orange-400" />
                   <span>Partner Portal Login</span>
                 </Link>
                 <Link
                   to="/portal/login?tab=admin"
                   className="px-5 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white font-medium text-xs border border-slate-700 transition-colors flex items-center gap-2"
                 >
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                  <ShieldCheck className="w-4 h-4 text-orange-400" />
                   <span>GenQuantis™ Scrutiny Board</span>
                 </Link>
               </div>
@@ -184,7 +184,7 @@ export const PartnerPortalHub: React.FC = () => {
             {/* Quick Status Tracker Search Box */}
             <div className="mt-14 bg-white/10 backdrop-blur-md border border-white/15 rounded-3xl p-6 sm:p-8 max-w-2xl shadow-2xl">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-cyan-300 flex items-center gap-2">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-orange-400 flex items-center gap-2">
                   <Search className="w-4 h-4" />
                   <span>Track Application Due Diligence Status</span>
                 </h3>
@@ -208,12 +208,12 @@ export const PartnerPortalHub: React.FC = () => {
                   }}
                   placeholder="Enter GQ-2026-XXXXXX"
                   disabled={isSearching}
-                  className="flex-grow px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 font-mono disabled:opacity-50"
+                  className="flex-grow px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 font-mono disabled:opacity-50"
                 />
                 <button
                   type="submit"
                   disabled={isSearching}
-                  className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-60"
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold text-sm transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-60"
                 >
                   {isSearching ? (
                     <>
@@ -241,7 +241,7 @@ export const PartnerPortalHub: React.FC = () => {
         {/* 3 Application Pathways Section */}
         <section id="pathways" className="py-20 container mx-auto px-4 sm:px-6 max-w-6xl">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-4 py-1.5 rounded-full">
+            <span className="text-xs font-bold uppercase tracking-widest text-orange-600 bg-orange-100/60 px-4 py-1.5 rounded-full border border-orange-200">
               Structured Due Diligence Gateways
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-3">
@@ -256,7 +256,7 @@ export const PartnerPortalHub: React.FC = () => {
             {pathways.map((p) => (
               <div
                 key={p.id}
-                className="bg-white rounded-3xl border border-slate-200/90 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1"
+                className="bg-white rounded-3xl border border-orange-100 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1"
               >
                 {/* Card Top Banner */}
                 <div className={`p-6 sm:p-7 bg-gradient-to-r ${p.accentGradient} text-white`}>
@@ -281,14 +281,14 @@ export const PartnerPortalHub: React.FC = () => {
                     <ul className="space-y-2 text-xs text-slate-600">
                       {p.eligibility.map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 flex-shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-orange-500 mt-1.5 flex-shrink-0" />
                           <span>{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="p-3.5 bg-slate-50 rounded-2xl border border-slate-100 text-[11px] text-slate-500 space-y-1">
+                  <div className="p-3.5 bg-orange-50/40 rounded-2xl border border-orange-100 text-[11px] text-slate-600 space-y-1">
                     <span className="font-semibold text-slate-800 uppercase tracking-wider text-[10px] block">
                       Authority Boundary:
                     </span>
@@ -300,7 +300,7 @@ export const PartnerPortalHub: React.FC = () => {
                 <div className="p-6 pt-0">
                   <Link
                     to={`/apply/${p.id}`}
-                    className="w-full py-3.5 px-4 rounded-xl bg-slate-900 hover:bg-blue-600 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2 shadow-md group-hover:bg-blue-600"
+                    className="w-full py-3.5 px-4 rounded-xl bg-slate-900 hover:bg-gradient-to-r hover:from-orange-500 hover:to-amber-500 text-white font-semibold text-xs transition-all flex items-center justify-center gap-2 shadow-md"
                   >
                     <span>{p.cta}</span>
                     <ArrowRight className="w-4 h-4" />
@@ -311,10 +311,10 @@ export const PartnerPortalHub: React.FC = () => {
           </div>
         </section>
 
-        {/* Governance & Authority Matrix Section (as emphasized in Dharani's email #8) */}
-        <section className="py-16 bg-white border-y border-slate-200">
+        {/* Governance & Authority Matrix Section */}
+        <section className="py-16 bg-white border-y border-orange-100">
           <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-            <div className="bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 rounded-3xl p-8 sm:p-12 text-white shadow-xl">
+            <div className="bg-gradient-to-br from-slate-950 via-stone-900 to-amber-950 rounded-3xl p-8 sm:p-12 text-white shadow-xl">
               <div className="max-w-3xl mb-8">
                 <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider mb-2">
                   <AlertTriangle className="w-4 h-4" />
@@ -330,7 +330,7 @@ export const PartnerPortalHub: React.FC = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-slate-300 font-light">
                 <div className="p-5 bg-white/5 rounded-2xl border border-white/10 space-y-2">
-                  <h4 className="text-sm font-bold text-cyan-300">Channel Partners May:</h4>
+                  <h4 className="text-sm font-bold text-orange-400">Channel Partners May:</h4>
                   <ul className="space-y-1.5 text-slate-300 list-disc pl-4">
                     <li>Identify prospective Franchise Investors and diagnostic site locations.</li>
                     <li>Develop local healthcare awareness and clinical practitioner relationships.</li>
@@ -353,12 +353,12 @@ export const PartnerPortalHub: React.FC = () => {
           </div>
         </section>
 
-        {/* ₹2.5 Lakh Onboarding Fee Disclosure Section (#9 in directive) */}
+        {/* ₹2.5 Lakh Onboarding Fee Disclosure Section */}
         <section className="py-16 container mx-auto px-4 sm:px-6 max-w-6xl">
-          <div className="bg-slate-100/80 rounded-3xl p-8 sm:p-10 border border-slate-200">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-slate-200">
+          <div className="bg-orange-50/50 rounded-3xl p-8 sm:p-10 border border-orange-100">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-orange-200/60">
               <div>
-                <div className="flex items-center gap-2 text-blue-600 text-xs font-bold uppercase tracking-wider mb-1">
+                <div className="flex items-center gap-2 text-orange-600 text-xs font-bold uppercase tracking-wider mb-1">
                   <CreditCard className="w-4 h-4" />
                   <span>Channel Partner Onboarding Architecture</span>
                 </div>
