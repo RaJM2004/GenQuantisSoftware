@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
+const fs = require('fs');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 const PartnerApplication = require('./models/PartnerApplication.cjs');
@@ -429,6 +430,17 @@ app.patch('/api/partner/leads/:id', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+// Serve static client build if dist folder exists (Single-Service Azure & Production deployment)
+const distPath = path.resolve(__dirname, '../dist');
+if (fs.existsSync(distPath)) {
+  console.log(`[GenQuantis Server] Serving production static files from ${distPath}`);
+  app.use(express.static(distPath));
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api')) return next();
+    res.sendFile(path.join(distPath, 'index.html'));
+  });
+}
 
 // Start Server
 if (require.main === module) {

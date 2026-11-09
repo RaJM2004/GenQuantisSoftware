@@ -458,23 +458,23 @@ export const ApplyPathway: React.FC = () => {
             </div>
           </div>
 
-          {/* Banner */}
-          <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-indigo-950 rounded-3xl p-6 sm:p-10 text-white shadow-xl mb-10 relative overflow-hidden">
-            <div className="absolute right-0 top-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
+          {/* Banner (Light Theme with Orange Accents) */}
+          <div className="bg-gradient-to-br from-white via-orange-50/70 to-amber-50/40 border border-orange-200/90 rounded-3xl p-6 sm:p-10 text-slate-900 shadow-xl shadow-orange-950/5 mb-10 relative overflow-hidden">
+            <div className="absolute right-0 top-0 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl pointer-events-none" />
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/20 text-orange-300 text-xs font-semibold uppercase tracking-wider mb-4 border border-orange-400/30">
-                <Briefcase className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 border border-orange-200 text-orange-800 text-xs font-semibold uppercase tracking-wider mb-4">
+                <Briefcase className="w-3.5 h-3.5 text-orange-600" />
                 <span>{pathwayTitles[currentPathway].badge}</span>
               </div>
-              <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
+              <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-950 mb-3">
                 {pathwayTitles[currentPathway].title}
               </h1>
-              <p className="text-slate-300 text-sm sm:text-base max-w-3xl font-light leading-relaxed">
+              <p className="text-slate-600 text-sm sm:text-base max-w-3xl font-normal leading-relaxed">
                 {pathwayTitles[currentPathway].subtitle}
               </p>
 
               {/* Pathway Switcher Tabs */}
-              <div className="mt-8 flex flex-wrap gap-2 pt-6 border-t border-white/10">
+              <div className="mt-8 flex flex-wrap gap-2 pt-6 border-t border-orange-100">
                 {(['pan-india', 'regional', 'franchise'] as PathwayType[]).map((p) => (
                   <button
                     key={p}
@@ -485,10 +485,10 @@ export const ApplyPathway: React.FC = () => {
                         setTerritory(prev => ({ ...prev, isPanIndia: true, selectedStates: ['Pan-India (All 36 States & UTs)'] }));
                       }
                     }}
-                    className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+                    className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                       currentPathway === p
-                        ? 'bg-white text-orange-950 shadow-md font-bold'
-                        : 'bg-white/10 hover:bg-white/20 text-white border border-white/10'
+                        ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md shadow-orange-500/20 font-bold'
+                        : 'bg-white hover:bg-orange-50/80 text-slate-700 border border-slate-200'
                     }`}
                   >
                     {p === 'pan-india' ? 'Pan-India Channel Partner' : p === 'regional' ? 'Regional Channel Partner' : 'Franchise Investor'}
