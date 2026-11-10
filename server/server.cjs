@@ -13,8 +13,59 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || process.env.MONGODB_URI;
 
-// Middleware
-app.use(cors({ origin: '*' }));
+// Allowed Origins for CORS
+const ALLOWED_ORIGINS = [
+  'https://partner.genquantis.com',
+  'http://partner.genquantis.com',
+  'https://genquantis.com',
+  'https://www.genquantis.com',
+  'https://white-river-015fad210.8.azurestaticapps.net',
+  'http://localhost:8080',
+  'http://localhost:5173',
+  'http://localhost:3000',
+  'http://localhost:5000',
+  'http://127.0.0.1:8080',
+  'http://127.0.0.1:5173'
+];
+
+// Comprehensive CORS & Preflight Middleware for https://partner.genquantis.com and Azure services
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  
+  if (origin) {
+    if (
+      ALLOWED_ORIGINS.includes(origin) ||
+      origin.endsWith('.genquantis.com') ||
+      origin.endsWith('.azurestaticapps.net') ||
+      origin.endsWith('.azurewebsites.net')
+    ) {
+      res.setHeader('Access-Control-Allow-Origin', origin);
+    } else {
+      res.setHeader('Access-Control-Allow-Origin', origin);
+    }
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+  }
+
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept, Origin');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Max-Age', '86400');
+
+  // Fast-return for CORS preflight OPTIONS requests
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+
+  next();
+});
+
+app.use(cors({
+  origin: (origin, callback) => callback(null, true),
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin']
+}));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
