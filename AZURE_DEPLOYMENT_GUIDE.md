@@ -261,3 +261,4 @@ Or in the Azure Portal:
 ### Issue: Client-side Routes (e.g. `/apply/pan-india`) 404 on refresh
 - **Cause**: Server not routing unhandled GET requests to `index.html`.
 - **Fix**: Already built into `server/server.cjs`! It automatically rewrites non-API GET requests to `dist/index.html`.
+
