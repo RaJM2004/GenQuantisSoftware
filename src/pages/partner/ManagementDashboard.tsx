@@ -491,39 +491,39 @@ export const ManagementDashboard: React.FC = () => {
               </div>
             </div>
 
-            {/* Quick Metrics Bar */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-2.5 mt-8 pt-6 border-t border-white/10 text-xs">
-              <div className="p-3 bg-white/5 rounded-xl border border-white/10">
-                <span className="text-slate-400 block text-[10px] uppercase font-bold">Total Dockets</span>
-                <span className="text-xl font-extrabold text-white">{stats.total}</span>
+            {/* Quick Metrics Bar (Light Theme with Crisp Contrast) */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-2.5 mt-8 pt-6 border-t border-orange-200/80 text-xs">
+              <div className="p-3 bg-white/90 rounded-2xl border border-orange-100 shadow-xs hover:border-orange-200 transition-all">
+                <span className="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">Total Dockets</span>
+                <span className="text-2xl font-extrabold text-slate-900 mt-0.5 block">{stats.total}</span>
               </div>
-              <div className="p-3 bg-white/5 rounded-xl border border-white/10">
-                <span className="text-slate-400 block text-[10px] uppercase font-bold">Pan-India</span>
-                <span className="text-xl font-extrabold text-indigo-300">{stats.panIndia}</span>
+              <div className="p-3 bg-white/90 rounded-2xl border border-orange-100 shadow-xs hover:border-orange-200 transition-all">
+                <span className="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">Pan-India</span>
+                <span className="text-2xl font-extrabold text-indigo-700 mt-0.5 block">{stats.panIndia}</span>
               </div>
-              <div className="p-3 bg-white/5 rounded-xl border border-white/10">
-                <span className="text-slate-400 block text-[10px] uppercase font-bold">Regional</span>
-                <span className="text-xl font-extrabold text-orange-300">{stats.regional}</span>
+              <div className="p-3 bg-white/90 rounded-2xl border border-orange-100 shadow-xs hover:border-orange-200 transition-all">
+                <span className="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">Regional</span>
+                <span className="text-2xl font-extrabold text-orange-600 mt-0.5 block">{stats.regional}</span>
               </div>
-              <div className="p-3 bg-white/5 rounded-xl border border-white/10">
-                <span className="text-slate-400 block text-[10px] uppercase font-bold">Franchise</span>
-                <span className="text-xl font-extrabold text-amber-300">{stats.franchise}</span>
+              <div className="p-3 bg-white/90 rounded-2xl border border-orange-100 shadow-xs hover:border-orange-200 transition-all">
+                <span className="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">Franchise</span>
+                <span className="text-2xl font-extrabold text-amber-700 mt-0.5 block">{stats.franchise}</span>
               </div>
-              <div className="p-3 bg-white/5 rounded-xl border border-white/10">
-                <span className="text-slate-400 block text-[10px] uppercase font-bold">Pending Scrutiny</span>
-                <span className="text-xl font-extrabold text-amber-400">{stats.pendingScrutiny}</span>
+              <div className="p-3 bg-white/90 rounded-2xl border border-orange-100 shadow-xs hover:border-orange-200 transition-all">
+                <span className="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">Pending Scrutiny</span>
+                <span className="text-2xl font-extrabold text-amber-600 mt-0.5 block">{stats.pendingScrutiny}</span>
               </div>
-              <div className="p-3 bg-white/5 rounded-xl border border-white/10">
-                <span className="text-slate-400 block text-[10px] uppercase font-bold">Approved</span>
-                <span className="text-xl font-extrabold text-emerald-400">{stats.approved}</span>
+              <div className="p-3 bg-white/90 rounded-2xl border border-orange-100 shadow-xs hover:border-orange-200 transition-all">
+                <span className="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">Approved</span>
+                <span className="text-2xl font-extrabold text-emerald-600 mt-0.5 block">{stats.approved}</span>
               </div>
-              <div className={`p-3 rounded-xl border transition-all col-span-2 sm:col-span-1 ${
+              <div className={`p-3 rounded-2xl border transition-all col-span-2 sm:col-span-1 shadow-xs ${
                 stats.pendingPayment > 0 
-                  ? 'bg-amber-500/20 border-amber-400/50 text-amber-300' 
-                  : 'bg-white/5 border-white/10'
+                  ? 'bg-amber-50/90 border-amber-300 text-amber-950' 
+                  : 'bg-white/90 border-orange-100'
               }`}>
-                <span className="text-slate-400 block text-[10px] uppercase font-bold">SBI Payment Verification</span>
-                <span className={`text-xl font-extrabold ${stats.pendingPayment > 0 ? 'text-amber-300 animate-pulse' : 'text-slate-300'}`}>
+                <span className="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">SBI Verification</span>
+                <span className={`text-2xl font-extrabold mt-0.5 block ${stats.pendingPayment > 0 ? 'text-amber-700 animate-pulse' : 'text-slate-700'}`}>
                   {stats.pendingPayment}
                 </span>
               </div>
@@ -543,13 +543,13 @@ export const ManagementDashboard: React.FC = () => {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id as any)}
-                    className={`flex items-center gap-2 px-3.5 sm:px-4 py-2.5 rounded-xl font-semibold transition-all flex-shrink-0 whitespace-nowrap ${
+                    className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold transition-all flex-shrink-0 whitespace-nowrap cursor-pointer ${
                       isActive
-                        ? 'bg-white text-orange-950 shadow-md font-bold'
-                        : 'bg-white/10 hover:bg-white/20 text-white'
+                        ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md shadow-orange-500/25 font-bold'
+                        : 'bg-white hover:bg-orange-50 text-slate-700 border border-slate-200/90 shadow-xs'
                     }`}
                   >
-                    <Icon className="w-4 h-4" />
+                    <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-orange-600'}`} />
                     <span>{tab.label}</span>
                   </button>
                 );
